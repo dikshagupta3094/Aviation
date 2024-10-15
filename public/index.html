@@ -10,7 +10,7 @@
 
 <body>
     <!-- Logo design and text design -->
-    <div class="flex flex-col items-center justify-center p-3 bg-cover" style="background-image: url('assets/Logo/image_bg3.jpg');">
+    <div class="flex flex-col items-center justify-center p-3 bg-cover" style="background-image: url('../src/assest/Logo/image_bg3.jpg');">
         <div class="flex flex-col md:flex-row items-center justify-between w-full space-y-4 md:space-y-0 md:space-x-4 lg:space-x-8">
             <!-- on medium size design -->
             <img src='../src/assest/Logo/Devi_Ahilya_Vishwavidyalaya_Logo.png' class="md:w-36 md:h-36 hidden md:block" alt="Devi Ahilya Logo" />
@@ -67,9 +67,12 @@
     </div>
 
     <!-- Footer Placeholder -->
-    <footer class="bg-gray-800 text-white text-center p-4">
-        <p>&copy; 2024 SCHOOL OF AVIATION, TOURISM AND HOSPITALITY MANAGEMENT</p>
-    </footer>
+    <div id="footer-container"></div>
+    <script type="module">
+       import {createFooterComponent} from '../src/scripts/Footer.js'; 
+       const footerContainer = document.getElementById('footer-container');
+       footerContainer.appendChild(createFooterComponent());
+    </script>
 
     <script>
         // JavaScript for handling the drawer (menu toggle)
