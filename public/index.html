@@ -130,9 +130,12 @@
     </div>
 
     <!-- Footer Placeholder -->
-    <footer class="bg-gray-800 text-white text-center p-4">
-      <p>&copy; 2024 SCHOOL OF AVIATION, TOURISM AND HOSPITALITY MANAGEMENT</p>
-    </footer>
+    <div id="footer-container"></div>
+    <script type="module">
+       import {createFooterComponent} from '../src/scripts/Footer.js'; 
+       const footerContainer = document.getElementById('footer-container');
+       footerContainer.appendChild(createFooterComponent());
+    </script>
 
     <script>
       // JavaScript for handling the drawer (menu toggle)
