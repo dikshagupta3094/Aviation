@@ -65,8 +65,8 @@
 
     <!-- Navbar Placeholder -->
 
-    <nav class="border-b border-gray-400 py-2 bg-blue-950">
-      <ul class="flex justify-around text-white text-xl font-bold">
+    <nav class=" md:border-b md:border-gray-400 md:py-2 md:bg-blue-950">
+      <ul class="hidden md:flex md:justify-around md:items-center text-white text-[18px] font-bold gap-5 p-2">
         <li><a href="#" class="hover:text-blue-700">Home</a></li>
         <li><a href="#" class="hover:text-blue-700">About</a></li>
         <li><a href="#" class="hover:text-blue-700">Academics</a></li>
@@ -79,17 +79,17 @@
 
     <!-- Drawer (Hidden for Desktop) -->
     <div class="md:hidden">
-      <button id="menu-btn" class="text-black p-2">
+      <button id="menu-btn" class=" text-2xl p-2 fixed top-0 ">
         <i class="fa-solid fa-bars"></i>
       </button>
       <div
         id="drawer"
         class="hidden fixed left-0 top-0 w-64 bg-white shadow-md h-full"
       >
-        <button id="close-btn" class="p-4">
+        <button id="close-btn" class="p-4 text-2xl">
           <i class="fas fa-times"></i>
         </button>
-        <ul class="p-4 space-y-4">
+        <ul class="p-4 space-y-6">
           <li>
             <a href="#" class="flex items-center"
               ><i class="fas fa-home mr-3"></i>Home</a
@@ -130,7 +130,7 @@
     </div>
 
     <!-- Footer Placeholder -->
-    <div id="footer-container"></div>
+ <div id="footer-container"></div>
     <script type="module">
        import {createFooterComponent} from '../src/scripts/Footer.js'; 
        const footerContainer = document.getElementById('footer-container');
