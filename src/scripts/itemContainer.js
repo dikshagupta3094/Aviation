@@ -8,7 +8,7 @@ export function createItemsContainer() {
     // Inner grid container with background image
     const gridContainer = document.createElement('div');
     gridContainer.classList.add(
-        'md:bg-[url("./assets/final_bg.jpg")]',
+        'md:bg-[url("../src/assest/final_bg.jpg")]',
         'mt-0', 'mb-0', 'bg-no-repeat', 'bg-[length:15%_auto]',
         '-z-0', 'bg-center', 'bg-blue-950',
         'grid', 'grid-cols-1', 'sm:grid-cols-3', 'lg:grid-cols-4',
@@ -31,14 +31,15 @@ export function createItemsContainer() {
 
     // Footer container
     const footerContainer = document.createElement('div');
-    footerContainer.classList.add('text-gray-400', 'grid', 'grid-cols-1', 'sm:grid-cols-2', 'gap-20', 'sm:px-20', 'px-20', 'py-5');
+    footerContainer.classList.add('text-gray-400', 'grid', 'grid-cols-3', 'sm:grid-cols-2', 'gap-20', 'sm:px-20', 'px-20', 'py-5');
 
     // Creating sample footer content (adjust according to actual JSX)
     const ulElement = document.createElement('ul');
     ulElement.classList.add('text-left');
     const liElement = document.createElement('li');
-    liElement.textContent = 'Sample footer content';  // Replace with actual footer content
+    liElement.textContent = '©School of Aviation, Tourism and Hospitality- 452001';  // Replace with actual footer content
     ulElement.appendChild(liElement);
+    
     footerContainer.appendChild(ulElement);
 
     container.appendChild(footerContainer);
