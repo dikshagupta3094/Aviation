@@ -1291,8 +1291,8 @@ video {
     background-color: rgb(23 37 84 / var(--tw-bg-opacity));
   }
 
-  .md\:bg-\[url\(\"\.\.\/src\/assest\/final_bg\.jpg\"\)\] {
-    background-image: url("../src/assest/final_bg.jpg");
+  .md-bg-\[url\(\"\.\.\/src\/assest\/final_bg\.jpg\"\)\] {
+    background-image: url("../../src/assest/final_bg.jpg");
   }
 
   .md\:px-2 {

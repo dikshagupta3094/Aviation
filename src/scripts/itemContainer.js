@@ -13,7 +13,7 @@ export function createItemsContainer() {
   // Inner grid container with background image
   const gridContainer = document.createElement("div");
   gridContainer.classList.add(
-    'md:bg-[url("../src/assest/final_bg.jpg")]',
+    'md-bg-[url("../src/assest/final_bg.jpg")]',
     "mt-0",
     "mb-0",
     "bg-no-repeat",
