@@ -21,34 +21,15 @@ export function createHeaderComponent() {
     </div>
     <nav class="md:border-b md:border-gray-400 md:py-2 md:bg-blue-950">
         <ul class="hidden md:flex md:justify-around md:items-center text-white text-[18px] font-bold gap-5 p-2">
-            <li><a href="#" class="hover:text-blue-700">Home</a></li>
-            <li><a href="#" class="hover:text-blue-700">About</a></li>
-            <li><a href="#" class="hover:text-blue-700">Academics</a></li>
+            <li><a href=${'./index.html'} class="hover:text-blue-700">Home</a></li>
+            <li><a href=${'./about.html'} class="hover:text-blue-700">About</a></li>
+            <li><a href=${'./academics.html'} class="hover:text-blue-700">Academics</a></li>
             <li><a href="#" class="hover:text-blue-700">Faculties</a></li>
             <li><a href="#" class="hover:text-blue-700">Events & Activities</a></li>
             <li><a href="#" class="hover:text-blue-700">Corporate Linkages</a></li>
             <li><a href="#" class="hover:text-blue-700">MOUs</a></li>
         </ul>
     </nav>
-    <div class="md:hidden">
-        <button id="menu-btn" class="text-2xl p-2 fixed top-0">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-        <div id="drawer" class="hidden fixed left-0 top-0 w-64 bg-white shadow-md h-full">
-            <button id="close-btn" class="p-4 text-2xl">
-                <i class="fas fa-times"></i>
-            </button>
-            <ul class="p-4 space-y-6">
-                <li><a href="#" class="flex items-center"><i class="fas fa-home mr-3"></i>Home</a></li>
-                <li><a href="#" class="flex items-center"><i class="fas fa-plane mr-3"></i>About</a></li>
-                <li><a href="#" class="flex items-center"><i class="fas fa-book mr-3"></i>Academics</a></li>
-                <li><a href="#" class="flex items-center"><i class="fas fa-users mr-3"></i>Faculties</a></li>
-                <li><a href="#" class="flex items-center"><i class="fas fa-calendar-alt mr-3"></i>Events & Activities</a></li>
-                <li><a href="#" class="flex items-center"><i class="fas fa-industry mr-3"></i>Corporate Linkages</a></li>
-                <li><a href="#" class="flex items-center"><i class="fas fa-handshake mr-3"></i>MOUs</a></li>
-            </ul>
-        </div>
-    </div>
     `;
     const headerContainer = document.createElement('div');
     headerContainer.innerHTML = headerHTML;
