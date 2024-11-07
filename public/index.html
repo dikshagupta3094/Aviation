@@ -25,13 +25,15 @@
       </script>
 
       <!-- Noticeboard -->
-      <div id="noticeboard" class="flex items-center justify-center w-[85%] rounded-md bg-opacity-60 my-10 pl-5 pb-10 pr-5 h-[75%] mx-auto"></div>
+      <div id="notice-board-container" ></div>
       <script type="module">
-          import { renderNoticeboard } from '../src/scripts/Noticeboard.js';
-          // Initial render
-          renderNoticeboard();
-          // Optional: Re-render on window resize
-          window.addEventListener('resize', renderNoticeboard);
+        // Import the renderNoticeBoard function and immediately call it.
+        import { renderNoticeBoard } from '../src/scripts/noticeboard.js';
+    
+        // Render the notice board inside the element with ID 'notice-board-container'
+        window.addEventListener('DOMContentLoaded', () => {
+          renderNoticeBoard('#notice-board-container');
+        });
       </script>
 
     <!-- Drawer (Hidden for Desktop)  -->
