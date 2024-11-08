@@ -21,9 +21,9 @@ export function createHeaderComponent() {
     </div>
     <nav class="md:border-b md:border-gray-400 md:py-2 md:bg-blue-950">
         <ul class="hidden md:flex md:justify-around md:items-center text-white text-[18px] font-bold gap-5 p-2">
-            <li><a href="#" class="hover:text-blue-700">Home</a></li>
-            <li><a href="#" class="hover:text-blue-700">About</a></li>
-            <li><a href="#" class="hover:text-blue-700">Academics</a></li>
+            <li><a href=${'./index.html'} class="hover:text-blue-700">Home</a></li>
+            <li><a href=${'./about.html'} class="hover:text-blue-700">About</a></li>
+            <li><a href=${'./academics.html'} class="hover:text-blue-700">Academics</a></li>
             <li><a href="#" class="hover:text-blue-700">Faculties</a></li>
             <li><a href="#" class="hover:text-blue-700">Events & Activities</a></li>
             <li><a href="#" class="hover:text-blue-700">Corporate Linkages</a></li>
