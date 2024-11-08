@@ -4,9 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About SATHM</title>
+  <link rel="stylesheet" href="../src/style/output.css" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <link rel="stylesheet" href="../src/style/aboutcss.css">
+  
 </head>
 <body>
+    <!-- Header Placeholder -->
+    <div id="header-container"></div>
+    <script type="module">
+      import { createHeaderComponent } from "../src/scripts/Header.js";
+      const headerContainer = document.getElementById("header-container");
+      headerContainer.appendChild(createHeaderComponent());
+    </script>
+
   <div class="container">
     <!-- Sidebar -->
     <aside class="sidebar">
@@ -55,6 +74,15 @@
   </div>
   
   <script src="script.js"></script>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-container"></div>
+  <script type="module">
+    import {createFooterComponent} from '../src/scripts/Footer.js'; 
+    const footerContainer = document.getElementById('footer-container');
+    footerContainer.appendChild(createFooterComponent());
+  </script>
+
 </body>
 <script>
   function showContent(sectionId) {
