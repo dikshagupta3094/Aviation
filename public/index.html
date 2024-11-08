@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SATHM Home</title>
     <link rel="stylesheet" href="../src/style/output.css" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -12,6 +13,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   </head>
 
   <body>
@@ -24,15 +26,34 @@
         headerContainer.appendChild(createHeaderComponent());
       </script>
 
-      <!-- Noticeboard -->
-      <div id="notice-board-container" ></div>
-      <script type="module">
-        // Import the renderNoticeBoard function and immediately call it.
-        import { renderNoticeBoard } from '../src/scripts/noticeboard.js';
+      <!-- Noticeboard and other home components-->
+             <!-- JavaScript Modules -->
+      <div id="home-layout">
+        <div id="Home-Components" class="flex flex-col items-center justify-center" style="background-image: url('../src/assest/BackgroundImage.jpg'); background-size: 100%;"></div>
+      </div>
     
-        // Render the notice board inside the element with ID 'notice-board-container'
-        window.addEventListener('DOMContentLoaded', () => {
-          renderNoticeBoard('#notice-board-container');
+      <script type="module">
+        console.log("The Script is running")
+        import initNoticeBoard from '../src/scripts/Noticeboard.js';
+        initNoticeBoard();
+    
+        document.addEventListener('DOMContentLoaded', () => {
+          // Initialize AOS animations
+          AOS.init({
+            offset: 300,
+            easing: 'ease-in-sine',
+            duration: 500,
+          });
+    
+          // Load and render components
+          document.addEventListener('DOMContentLoaded', () => {
+            if (initNoticeBoard() == null) {  // This checks for both null and undefined
+              console.log("NoticeBoard doesn't returns any value");
+            } else {
+              console.log("The value was appended");
+            }
+          });
+  
         });
       </script>
 
@@ -89,7 +110,7 @@
     </div>
 
     <script>
-      // JavaScript for handling the drawer (menu toggle)
+      // Script for handling the drawer (menu toggle)
       const menuBtn = document.getElementById("menu-btn");
       const drawer = document.getElementById("drawer");
       const closeBtn = document.getElementById("close-btn");
