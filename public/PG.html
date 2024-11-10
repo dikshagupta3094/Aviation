@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SATHM academics</title>
+    <link rel="stylesheet" href="../src/style/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Header Placeholder starts -->
+    <div id="header-container"></div>
+    <script type="module">
+      import { createHeaderComponent } from "../src/scripts/Header.js";
+      const headerContainer = document.getElementById("header-container");
+      headerContainer.appendChild(createHeaderComponent());
+    </script>
+    <!-- Header Placeholder end -->
+
+    <!-- Drawer (Hidden for Desktop)  -->
+    <div class="md:hidden">
+      <button id="menu-btn" class="text-2xl p-2 fixed top-0">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div
+        id="drawer"
+        class="hidden fixed left-0 top-0 w-64 bg-white shadow-md h-full"
+      >
+        <button id="close-btn" class="p-4 text-2xl">
+          <i class="fas fa-times"></i>
+        </button>
+        <ul class="p-4 space-y-6">
+          <li>
+            <a href="#" class="flex items-center"
+              ><i class="fas fa-home mr-3"></i>Home</a
+            >
+          </li>
+          <li>
+            <a href="#" class="flex items-center"
+              ><i class="fas fa-plane mr-3"></i>About</a
+            >
+          </li>
+          <li>
+            <a href="#" class="flex items-center"
+              ><i class="fas fa-book mr-3"></i>Academics</a
+            >
+          </li>
+          <li>
+            <a href="#" class="flex items-center"
+              ><i class="fas fa-users mr-3"></i>Faculties</a
+            >
+          </li>
+          <li>
+            <a href="#" class="flex items-center"
+              ><i class="fas fa-calendar-alt mr-3"></i>Events & Activities</a
+            >
+          </li>
+          <li>
+            <a href="#" class="flex items-center"
+              ><i class="fas fa-industry mr-3"></i>Corporate Linkages</a
+            >
+          </li>
+          <li>
+            <a href="#" class="flex items-center"
+              ><i class="fas fa-handshake mr-3"></i>MOUs</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PG  page begin here -->
+    <div class="m-5 p-5 text-xl border border-gray-500 rounded-lg box-shadow">
+      <div class="grid grid-flow-col gap-20">
+        <ul class="border-gray-700 mt-14">
+          <li
+            class="border-gray-200 bg-gray-100 border w-fit m-1 p-2 cursor-pointer font-semibold hover:text-blue-900 hover:bg-white"
+            id="toursim1"
+          >
+            MBA (Toursim) 2yrs
+          </li>
+          <li
+            class="border-gray-200 bg-gray-100 border w-fit m-1 p-2 cursor-pointer font-semibold hover:text-blue-900 hover:bg-white" id="toursim2"
+          >
+            MBA (Toursim) 5yrs
+          </li>
+        </ul>
+       <!-- MBA Tourism 2 years details -->
+        <div  class="block" id="data1" >
+          <h2 class="text-center font-bold text-2xl text-blue-950">
+            MBA TOURISM 2yrs
+          </h2>
+          <div class="flex flex-col">
+            <h3 class="font-bold text-xl underline text-blue-950">
+              About Programm:
+            </h3>
+            <p class="text-justify">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus
+              beatae, saepe itaque molestias consequatur pariatur totam vitae
+              voluptas, corrupti delectus harum eius ratione! Ad totam eum
+              cupiditate nemo officiis aspernatur reprehenderit eius labore
+              maxime quo natus, sequi amet nihil, soluta architecto tempora
+              dolorum voluptatum! Corrupti voluptatem quasi quis molestiae
+              asperiores temporibus. Provident fugit ipsam quaerat accusantium,
+              optio eos illo possimus dignissimos, quisquam tenetur obcaecati
+              cumque, nemo aliquam autem? Quas cumque deleniti neque iusto nisi
+              quia quaerat quibusdam tenetur saepe, voluptate aut animi dolore
+              modi dolor atque quis illum cupiditate, eum possimus culpa.
+              Voluptatum
+            </p>
+          </div>
+          <table class="mt-10">
+            <thead class="border border-blue-950">
+              <tr class="border border-blue-950">
+                <th class="border border-blue-950 p-2 text-center">
+                  Girls Fess
+                </th>
+                <th class="border border-blue-950 p-2 text-center">
+                  Boys Fess
+                </th>
+                <th class="border border-blue-950 p-2 text-center">
+                  Total Seats
+                </th>
+              </tr>
+            </thead>
+            <tbody class="border border-blue-950">
+              <tr>
+                <td class="border border-blue-950 p-2 text-center">3000</td>
+                <td class="border border-blue-950 p-2 text-center">5000</td>
+                <td class="border border-blue-950 p-2 text-center">26</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- MBA Tourism 5 years details -->
+        <div  class="hidden" id="data2">
+          <h2 class="text-center font-bold text-2xl text-blue-950">
+            MBA TOURISM 5yrs
+          </h2>
+          <div class="flex flex-col">
+            <h3 class="font-bold text-xl underline text-blue-950">
+              About Programm:
+            </h3>
+            <p class="text-justify">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus
+              beatae, saepe itaque molestias consequatur pariatur totam vitae
+              voluptas, corrupti delectus harum eius ratione! Ad totam eum
+              cupiditate nemo officiis aspernatur reprehenderit eius labore
+              maxime quo natus, sequi amet nihil, soluta architecto tempora
+              dolorum voluptatum! Corrupti voluptatem quasi quis molestiae
+              asperiores temporibus. Provident fugit ipsam quaerat accusantium,
+              optio eos illo possimus dignissimos, quisquam tenetur obcaecati
+              cumque, nemo aliquam autem? Quas cumque deleniti neque iusto nisi
+              quia quaerat quibusdam tenetur saepe, voluptate aut animi dolore
+              modi dolor atque quis illum cupiditate, eum possimus culpa.
+              Voluptatum
+            </p>
+          </div>
+          <table class="mt-10">
+            <thead class="border border-blue-950">
+              <tr class="border border-blue-950">
+                <th class="border border-blue-950 p-2 text-center">
+                  Girls Fess
+                </th>
+                <th class="border border-blue-950 p-2 text-center">
+                  Boys Fess
+                </th>
+                <th class="border border-blue-950 p-2 text-center">
+                  Total Seats
+                </th>
+              </tr>
+            </thead>
+            <tbody class="border border-blue-950">
+              <tr>
+                <td class="border border-blue-950 p-2 text-center">3000</td>
+                <td class="border border-blue-950 p-2 text-center">5000</td>
+                <td class="border border-blue-950 p-2 text-center">26</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+
+    <script>
+      // JavaScript for handling the drawer (menu toggle)
+      const menuBtn = document.getElementById("menu-btn");
+      const drawer = document.getElementById("drawer");
+      const closeBtn = document.getElementById("close-btn");
+
+      menuBtn.addEventListener("click", () => {
+        drawer.classList.toggle("hidden");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        drawer.classList.add("hidden");
+      });
+    </script>
+
+    <!-- Javascript for handling toggle between MBA tourism 2years and MBA tourism 5 years-->
+    <script>
+      const t2 = document.getElementById('toursim2');
+      const t1 = document.getElementById('toursim1')
+      const data1 = document.getElementById('data1')
+      const data2 = document.getElementById('data2')
+
+      t1.addEventListener('click',()=>{
+        data1.classList.remove('hidden')
+        data2.classList.add('hidden')
+      })
+
+      t2.addEventListener('click',()=>{
+        data2.classList.remove('hidden')
+        data1.classList.add('hidden')
+      })
+    </script>
+
+    <!-- Footer Placeholder start -->
+    <div id="footer-container"></div>
+    <script type="module">
+      import { createFooterComponent } from "../src/scripts/Footer.js";
+      const footerContainer = document.getElementById("footer-container");
+
+      footerContainer.appendChild(createFooterComponent());
+    </script>
+    <!-- Footer Placeholder end -->
+  </body>
+</html>

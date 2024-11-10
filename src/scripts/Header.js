@@ -1,5 +1,5 @@
 export function createHeaderComponent() {
-    const headerHTML = `
+  const headerHTML = `
     <div class="flex flex-col items-center justify-center p-3 bg-cover" style="background-image: url('../src/assest/Logo/image_bg3.jpg')">
         <div class="flex flex-col md:flex-row items-center justify-between w-full space-y-4 md:space-y-0 md:space-x-4 lg:space-x-8">
             <img src="../src/assest/Logo/Devi_Ahilya_Vishwavidyalaya_Logo.png" class="md:w-36 md:h-36 hidden md:block" alt="Devi Ahilya Logo" />
@@ -19,20 +19,48 @@ export function createHeaderComponent() {
             <img src="../src/assest/Logo/sathm_logo_without_background.png" alt="SATHM Logo" class="md:w-40 md:h-40 hidden md:block" />
         </div>
     </div>
+
     <nav class="md:border-b md:border-gray-400 md:py-2 md:bg-blue-950">
-        <ul class="hidden md:flex md:justify-around md:items-center text-white text-[18px] font-bold gap-5 p-2">
-            <li><a href=${'./index.html'} class="hover:text-blue-700">Home</a></li>
-            <li><a href=${'./about.html'} class="hover:text-blue-700">About</a></li>
-            <li><a href=${'./academics.html'} class="hover:text-blue-700">Academics</a></li>
-            <li><a href="#" class="hover:text-blue-700">Faculties</a></li>
-            <li><a href="#" class="hover:text-blue-700">Events & Activities</a></li>
-            <li><a href="#" class="hover:text-blue-700">Corporate Linkages</a></li>
-            <li><a href="#" class="hover:text-blue-700">MOUs</a></li>
+        <ul class="hidden md:flex md:justify-around md:items-center text-white text-[18px] font-bold gap-2 p-2">
+            <li><a href=${"./index.html"} class="hover:text-blue-700 hover:underline">Home</a></li>
+            <li><a href=${"./about.html"} class="hover:text-blue-700 hover:underline">About</a></li>
+            <div class="hover:text-blue-700 cursor-pointer flex items-center justify-center gap-1 relative hover:underline" id = "academics"> 
+             <ul>Academics</ul>
+            <i class="fa-solid fa-caret-down"></i>  
+            
+           </div>
+            <li><a href="#" class="hover:text-blue-700 hover:underline">Faculties</a></li>
+            <li><a href="#" class="hover:text-blue-700 hover:underline">Events & Activities</a></li>
+            <li><a href="#" class="hover:text-blue-700 hover:underline">Corporate Linkages</a></li>
+            <li><a href="#" class="hover:text-blue-700 hover:underline">MOUs</a></li>
         </ul>
     </nav>
     `;
-    const headerContainer = document.createElement('div');
-    headerContainer.innerHTML = headerHTML;
-    
-    // Return the header element
-    return headerContainer;}
+  const headerContainer = document.createElement("div");
+  headerContainer.innerHTML = headerHTML;
+
+  const academics = headerContainer.querySelector("#academics");
+  academics.addEventListener("click", () => {
+    const dropdown = `<div class = 'absolute left-0 top-9 mt-2 w-max flex flex-col items-center justify-center text-black'>
+          <ul class = 'flex flex-col'>
+          <li class = 'p-1 text-center border-gray-200 border bg-gray-100 hover:underline hover:text-blue-800'> <a href = ${"./PG.html"}>PG Course</a></li>
+          <li class = 'p-1 text-center border-gray-200 border bg-gray-100 hover:underline hover:text-blue-800'>UG Course</li>
+          <li class = 'p-1 text-center border-gray-200 border bg-gray-100 hover:underline hover:text-blue-800'>Diploma Course</li>
+          <li class = 'p-1 text-center border-gray-200 border bg-gray-100 hover:underline hover:text-blue-800'>Certificate Course</li>
+          </ul>
+        </div>`;
+
+    const existingDropdown = academics.querySelector(".dropdown");
+    if (existingDropdown) {
+      existingDropdown.remove(); // Remove if it exists
+    } else {
+      const menu = document.createElement("div");
+      menu.classList.add("dropdown"); // Add a class to identify it
+      menu.innerHTML = dropdown;
+      academics.appendChild(menu);
+    }
+  });
+
+  // Return the header element
+  return headerContainer;
+}
