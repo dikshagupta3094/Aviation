@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About SATHM</title>
+  <link rel="stylesheet" href="../src/style/output.css" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <link rel="stylesheet" href="../src/style/aboutcss.css">
+  
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-container"></div>
+    <script type="module">
+      import { createHeaderComponent } from "../src/scripts/Header.js";
+      const headerContainer = document.getElementById("header-container");
+      headerContainer.appendChild(createHeaderComponent());
+    </script>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>About SATHM</h2>
+      <ul>
+        <li onclick="showContent('director')" class="active">Director</li>
+        <li onclick="showContent('overview')">Overview</li>
+        <li onclick="showContent('vision')">Vision</li>
+        <li onclick="showContent('mission')">Mission</li>
+      </ul>
+    </aside>
+
+    <!-- Content Area -->
+    <main class="content">
+      <div id="director" class="content-section active">
+        <h3>Director</h3>
+        <div class="director-info">
+          <img src="director-image.jpg" alt="Director" class="director-img">
+          <blockquote>
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+          </blockquote>
+        </div>
+      </div>
+      
+      <div id="overview" class="content-section">
+        <h3>Overview</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae...
+        </p>
+      </div>
+
+      <div id="vision" class="content-section">
+        <h3>Vision</h3>
+        <p>
+          Our vision is to foster a new generation of ethical business leaders...
+        </p>
+      </div>
+
+      <div id="mission" class="content-section">
+        <h3>Mission</h3>
+        <p>
+          Our mission is to instill values and foster leadership in students...
+        </p>
+      </div>
+    </main>
+  </div>
+  
+  <script src="script.js"></script>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-container"></div>
+  <script type="module">
+    import {createFooterComponent} from '../src/scripts/Footer.js'; 
+    const footerContainer = document.getElementById('footer-container');
+    footerContainer.appendChild(createFooterComponent());
+  </script>
+
+</body>
+<script>
+  function showContent(sectionId) {
+    // Hide all content sections
+    const sections = document.querySelectorAll(".content-section");
+    sections.forEach((section) => section.classList.remove("active"));
+
+    // Remove active class from all sidebar items
+    const sidebarItems = document.querySelectorAll(".sidebar ul li");
+    sidebarItems.forEach((item) => item.classList.remove("active"));
+
+    // Show the selected content section
+    document.getElementById(sectionId).classList.add("active");
+
+    // Add active class to the selected sidebar item
+    event.target.classList.add("active");
+  }
+</script>
+</html>
