@@ -27,12 +27,11 @@ export function createHeaderComponent() {
             <div class="hover:text-blue-700 cursor-pointer flex items-center justify-center gap-1 relative hover:underline" id = "academics"> 
              <ul>Academics</ul>
             <i class="fa-solid fa-caret-down"></i>  
-            
            </div>
-            <li><a href="#" class="hover:text-blue-700 hover:underline">Faculties</a></li>
-            <li><a href="#" class="hover:text-blue-700 hover:underline">Events & Activities</a></li>
-            <li><a href="#" class="hover:text-blue-700 hover:underline">Corporate Linkages</a></li>
-            <li><a href="#" class="hover:text-blue-700 hover:underline">MOUs</a></li>
+            <li><a href=${"./faculties.html"} class="hover:text-blue-700 hover:underline">Faculties</a></li>
+            <li><a href=${"./events.html"} class="hover:text-blue-700 hover:underline">Events & Activities</a></li>
+            <li><a href=${"./corporate.html"} class="hover:text-blue-700 hover:underline">Corporate Linkages</a></li>
+            <li><a href=${"./mous.html"} class="hover:text-blue-700 hover:underline">MOUs</a></li>
         </ul>
     </nav>
     `;
@@ -41,12 +40,12 @@ export function createHeaderComponent() {
 
   const academics = headerContainer.querySelector("#academics");
   academics.addEventListener("click", () => {
-    const dropdown = `<div class = 'absolute left-0 top-9 mt-2 w-max flex flex-col items-center justify-center text-black'>
+    const dropdown = `<div class = 'absolute left-0 top-9 mt-2 w-max space-x-20 space-y-20 flex flex-col items-center justify-center text-black'>
           <ul class = 'flex flex-col'>
-          <li class = 'p-1 text-center border-gray-200 border bg-gray-100 hover:underline hover:text-blue-800'> <a href = ${"./PG.html"}>PG Course</a></li>
-          <li class = 'p-1 text-center border-gray-200 border bg-gray-100 hover:underline hover:text-blue-800'>UG Course</li>
-          <li class = 'p-1 text-center border-gray-200 border bg-gray-100 hover:underline hover:text-blue-800'>Diploma Course</li>
-          <li class = 'p-1 text-center border-gray-200 border bg-gray-100 hover:underline hover:text-blue-800'>Certificate Course</li>
+          <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'> <a href = ${"./PG.html"}>PG Course</a></li>
+          <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./UG.html"}>UG Course</a></li>
+          <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./Diploma.html"}>Diploma Course</a></li>
+          <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./Certificate.html"}>Certificate Course</a></li>
           </ul>
         </div>`;
 

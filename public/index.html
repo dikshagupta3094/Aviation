@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SATHM Home</title>
     <link rel="stylesheet" href="../src/style/output.css" />
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -17,91 +20,105 @@
   </head>
 
   <body>
+    <!-- Header Placeholder -->
+    <div id="header-container"></div>
+    <script type="module">
+      import { createHeaderComponent } from "../src/scripts/Header.js";
+      const headerContainer = document.getElementById("header-container");
+      headerContainer.appendChild(createHeaderComponent());
+    </script>
 
-      <!-- Header Placeholder -->
-      <div id="header-container"></div>
-      <script type="module">
-        import { createHeaderComponent } from "../src/scripts/Header.js";
-        const headerContainer = document.getElementById("header-container");
-        headerContainer.appendChild(createHeaderComponent());
-      </script>
+    <!-- Noticeboard and other home components-->
+    <!-- JavaScript Modules -->
+    <div id="home-layout">
+      <div
+        id="Home-Components"
+        class="flex flex-col items-center justify-center"
+        style="
+          background-image: url('../src/assest/BackgroundImage.jpg');
+          background-size: 100%;
+        "
+      ></div>
+    </div>
 
-      <!-- Noticeboard and other home components-->
-             <!-- JavaScript Modules -->
-      <div id="home-layout">
-        <div id="Home-Components" class="flex flex-col items-center justify-center" style="background-image: url('../src/assest/BackgroundImage.jpg'); background-size: 100%;"></div>
-      </div>
-    
-      <script type="module">
-        console.log("The Script is running")
-        import initNoticeBoard from '../src/scripts/Noticeboard.js';
-        initNoticeBoard();
-    
-        document.addEventListener('DOMContentLoaded', () => {
-          // Initialize AOS animations
-          AOS.init({
-            offset: 300,
-            easing: 'ease-in-sine',
-            duration: 500,
-          });
-    
-          // Load and render components
-          document.addEventListener('DOMContentLoaded', () => {
-            if (initNoticeBoard() == null) {  // This checks for both null and undefined
-              console.log("NoticeBoard doesn't returns any value");
-            } else {
-              console.log("The value was appended");
-            }
-          });
-  
+    <script type="module">
+      console.log("The Script is running");
+      import initNoticeBoard from "../src/scripts/Noticeboard.js";
+      initNoticeBoard();
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Initialize AOS animations
+        AOS.init({
+          offset: 300,
+          easing: "ease-in-sine",
+          duration: 500,
         });
-      </script>
+
+        // Load and render components
+        document.addEventListener("DOMContentLoaded", () => {
+          if (initNoticeBoard() == null) {
+            // This checks for both null and undefined
+            console.log("NoticeBoard doesn't returns any value");
+          } else {
+            console.log("The value was appended");
+          }
+        });
+      });
+    </script>
+    <!-- Notice board ends here -->
 
     <!-- Drawer (Hidden for Desktop)  -->
     <div class="md:hidden">
-      <button id="menu-btn" class=" text-2xl p-2 fixed top-0 ">
+      <button id="menu-btn" class="text-2xl p-2 fixed top-0">
         <i class="fa-solid fa-bars"></i>
       </button>
       <div
         id="drawer"
-        class="hidden fixed left-0 top-0 w-64 bg-white shadow-md h-full"
+        class="hidden fixed left-0 top-0 w-64 bg-white shadow-md h-full z-10"
       >
         <button id="close-btn" class="p-4 text-2xl">
           <i class="fas fa-times"></i>
         </button>
         <ul class="p-4 space-y-6">
           <li>
-            <a href="#" class="flex items-center"
+            <a href="./index.html" class="flex items-center"
               ><i class="fas fa-home mr-3"></i>Home</a
             >
           </li>
           <li>
-            <a href="#" class="flex items-center"
+            <a href="./about.html" class="flex items-center"
               ><i class="fas fa-plane mr-3"></i>About</a
             >
           </li>
-          <li>
-            <a href='./Academics.html' class="flex items-center"
-              ><i class="fas fa-book mr-3"></i>Academics</a
+          <div class="flex items-center">
+            <i class="fas fa-book mr-3"></i>
+            <div
+              class="flex items-center gap-1 relative"
+              id="academicsDropdown"
             >
-          </li>
+              <ul>
+                Academics
+              </ul>
+              <i class="fa-solid fa-caret-down"></i>
+            </div>
+          </div>
           <li>
-            <a href="#" class="flex items-center"
+            <a href="./faculties.html" class="flex items-center"
               ><i class="fas fa-users mr-3"></i>Faculties</a
             >
           </li>
           <li>
-            <a href="#" class="flex items-center"
+            <a href="./events.html" class="flex items-center"
               ><i class="fas fa-calendar-alt mr-3"></i>Events & Activities</a
             >
           </li>
           <li>
-            <a href="#" class="flex items-center"
+            <a href="./corporate.html" class="flex items-center"
               ><i class="fas fa-industry mr-3"></i>Corporate Linkages</a
             >
           </li>
           <li>
-            <a href="#" class="flex items-center"
+            <a href="./mous.html" class="flex items-center"
               ><i class="fas fa-handshake mr-3"></i>MOUs</a
             >
           </li>
@@ -110,61 +127,67 @@
     </div>
 
     <section class="bg-white border-4 border-blue-950 mx-4 rounded-lg mt-8">
-        <h1 class="text-white text-center text-4xl p-4 font-bold bg-blue-900 text-shadow">
-          MESSAGE FROM DIRECTOR
-        </h1>
-        <div class="flex flex-col md:flex-col lg:flex-row items-center justify-center gap-10 mx-2 rounded-lg" data-aos="fade-zoom-in">
-          <div>
-            <img
-              src="path_to_image/DirectorImage.jpg"
-              alt="Director Image"
-              class="box-shadow m-3 rounded-lg h-[250px] w-[250px] md:h-[400px] md:w-[400px] sm-custom:h-[300px] sm-custom:w-[300px]"
-            />
-          </div>
-          <div class="w-[80%]">
-            <p class="text-justify pt-8 px-2 text-sm md:text-base lg:h-96 lg:overflow-clip">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus
-              adipisci eius perspiciatis tenetur quam saepe iusto aliquid magni rerum,
-              exercitationem maxime harum totam autem cum corporis similique illum
-              aspernatur, repellat ex dolore unde. Veniam perferendis modi amet
-              voluptas eligendi distinctio ratione similique, alias doloremque,
-              explicabo dolor asperiores iure, sed doloribus corrupti vitae. Illum
-              eveniet laboriosam voluptatem, aspernatur tempore a, natus omnis
-              consequuntur maiores exercitationem fugiat consectetur unde, explicabo
-              possimus odit eaque aliquam suscipit adipisci ab quae temporibus minus
-              amet deserunt? Magnam eos itaque unde excepturi necessitatibus molestiae
-              ab repellendus, eveniet quasi soluta ea architecto id, quam eum corrupti
-              quos impedit! Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Dolor est explicabo eius repellendus et, enim a praesentium nisi sit
-              repudiandae suscipit assumenda? Error, eveniet? Nemo, autem distinctio
-              laboriosam sequi quam voluptates magnam quae dignissimos omnis facilis
-              pariatur hic temporibus asperiores qui! Totam delectus blanditiis quas,
-              ab, similique esse illum commodi eaque quis libero velit molestias, ad
-              magni provident a quaerat animi. Officia, commodi placeat maiores
-              repellat vero non culpa. Modi sunt animi quae, delectus libero nemo,
-              ullam aliquid fuga nisi non laborum exercitationem porro saepe esse
-              consequuntur nihil, voluptatibus unde minima voluptatem! Ab non eligendi
-              id officiis natus dolorum distinctio nemo? Obcaecati error recusandae
-              voluptas, quaerat maiores. Adipisci necessitatibus tempore recusandae!
-              Ipsa, commodi illum saepe, autem atque numquam, quaerat dolores animi
-              odio rerum fuga. Ipsam, tenetur! Itaque perspiciatis veniam deserunt
-              sint quae.
-            </p>
-            <a href="/directormsg">
-              <button class="text-blue-950 font-extrabold">Read more...</button>
-            </a>
-            <p class="font-semibold text-xl">Dr. Preeti Singh</p>
-            <p class="font-semibold text-xl pb-1">
-              Director <span>SATHM</span>, DAVV
-            </p>
-          </div>
+      <h1
+        class="text-white text-center text-4xl p-4 font-bold bg-blue-900 text-shadow"
+      >
+        MESSAGE FROM DIRECTOR
+      </h1>
+      <div
+        class="flex flex-col md:flex-col lg:flex-row items-center justify-center gap-10 mx-2 rounded-lg"
+        data-aos="fade-zoom-in"
+      >
+        <div>
+          <img
+            src="path_to_image/DirectorImage.jpg"
+            alt="Director Image"
+            class="box-shadow m-3 rounded-lg h-[250px] w-[250px] md:h-[400px] md:w-[400px] sm-custom:h-[300px] sm-custom:w-[300px]"
+          />
         </div>
-      </section>
-      
-    <!-- Footer Placeholder -->
-    <footer class="bg-gray-800 text-white text-center p-4">
-        <p>&copy; 2024 SCHOOL OF AVIATION, TOURISM AND HOSPITALITY MANAGEMENT</p>
-    </footer>
+        <div class="w-[80%]">
+          <p
+            class="text-justify pt-8 px-2 text-sm md:text-base lg:h-96 lg:overflow-clip"
+          >
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus
+            adipisci eius perspiciatis tenetur quam saepe iusto aliquid magni
+            rerum, exercitationem maxime harum totam autem cum corporis
+            similique illum aspernatur, repellat ex dolore unde. Veniam
+            perferendis modi amet voluptas eligendi distinctio ratione
+            similique, alias doloremque, explicabo dolor asperiores iure, sed
+            doloribus corrupti vitae. Illum eveniet laboriosam voluptatem,
+            aspernatur tempore a, natus omnis consequuntur maiores
+            exercitationem fugiat consectetur unde, explicabo possimus odit
+            eaque aliquam suscipit adipisci ab quae temporibus minus amet
+            deserunt? Magnam eos itaque unde excepturi necessitatibus molestiae
+            ab repellendus, eveniet quasi soluta ea architecto id, quam eum
+            corrupti quos impedit! Lorem ipsum dolor sit amet consectetur,
+            adipisicing elit. Dolor est explicabo eius repellendus et, enim a
+            praesentium nisi sit repudiandae suscipit assumenda? Error, eveniet?
+            Nemo, autem distinctio laboriosam sequi quam voluptates magnam quae
+            dignissimos omnis facilis pariatur hic temporibus asperiores qui!
+            Totam delectus blanditiis quas, ab, similique esse illum commodi
+            eaque quis libero velit molestias, ad magni provident a quaerat
+            animi. Officia, commodi placeat maiores repellat vero non culpa.
+            Modi sunt animi quae, delectus libero nemo, ullam aliquid fuga nisi
+            non laborum exercitationem porro saepe esse consequuntur nihil,
+            voluptatibus unde minima voluptatem! Ab non eligendi id officiis
+            natus dolorum distinctio nemo? Obcaecati error recusandae voluptas,
+            quaerat maiores. Adipisci necessitatibus tempore recusandae! Ipsa,
+            commodi illum saepe, autem atque numquam, quaerat dolores animi odio
+            rerum fuga. Ipsam, tenetur! Itaque perspiciatis veniam deserunt sint
+            quae.
+          </p>
+          <a href="/directormsg">
+            <button class="text-blue-950 font-extrabold">Read more...</button>
+          </a>
+          <p class="font-semibold text-xl">Dr. Preeti Singh</p>
+          <p class="font-semibold text-xl pb-1">
+            Director <span>SATHM</span>, DAVV
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Script section begins here  -->
 
     <script>
       // Script for handling the drawer (menu toggle)
@@ -179,16 +202,36 @@
       closeBtn.addEventListener("click", () => {
         drawer.classList.add("hidden");
       });
+      //Script for handling academics dropdown menu
+      const academics = document.getElementById("academicsDropdown");
+      academics.addEventListener("click", () => {
+        const dropdown = `<div class = 'absolute left-0 top-5  mt-2  flex flex-col items-center justify-center text-black'>
+          <ul class = 'flex flex-col w-[200px]'>
+          <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'> <a href = ${"./PG.html"}>PG Course</a></li>
+          <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./UG.html"}>UG Course</a></li>
+          <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./Diploma.html"}>Diploma Course</a></li>
+          <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./Certificate.html"}>Certificate Course</a></li>
+          </ul>
+        </div>`;
+        const existingDropdown = academics.querySelector(".dropdown");
+        if (existingDropdown) {
+          existingDropdown.remove(); // Remove if it exists
+        } else {
+          const menu = document.createElement("div");
+          menu.classList.add("dropdown"); // Add a class to identify it
+          menu.innerHTML = dropdown;
+          academics.appendChild(menu);
+        }
+      });
+    </script>
+    <!-- Footer Placeholder -->
+    <div id="footer-container"></div>
+    <script type="module">
+      import { createFooterComponent } from "../src/scripts/Footer.js";
+      const footerContainer = document.getElementById("footer-container");
+      footerContainer.appendChild(createFooterComponent());
     </script>
 
-  
-<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quas ex ipsa error odio? Illo, sit. Illo, omnis molestias! Dolor atque impedit perspiciatis ullam qui ut rem quae ea minus voluptas repellat voluptatum, doloremque quisquam. Debitis eveniet quam inventore, eaque molestiae tempora, quod dignissimos iure aliquid, repudiandae architecto. Veritatis natus libero vel ab amet exercitationem accusantium. Aspernatur, quaerat. Molestias iste, magnam delectus laudantium omnis velit at tempora reiciendis. Harum, aut odio! Molestiae cupiditate dolor eligendi, sapiente quae nisi enim voluptas. Dolores, quibusdam velit. Ea ut doloribus neque amet? Omnis, sequi ducimus nemo eius exercitationem totam minus! Quibusdam id quam velit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Non minima sit voluptatum iusto quo, animi accusantium numquam blanditiis debitis, eligendi delectus quos. Illo voluptatibus, optio repellat recusandae harum beatae, ratione accusantium voluptas qui illum porro veritatis molestias hic dolor? Consequatur cum molestiae minima tenetur error corporis quasi consectetur ex fugiat dignissimos veritatis eveniet sit neque laboriosam, hic non provident dolor nam accusantium molestias labore. Molestiae ipsa laborum soluta animi praesentium modi quas, amet at possimus adipisci in optio magnam. Illum doloremque non fugiat, delectus quaerat ratione odio illo maiores quisquam nihil, voluptate ullam cumque voluptatibus quae. Distinctio voluptatum ab totam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat perferendis excepturi explicabo accusamus enim omnis at, veritatis dolorem maiores tempora architecto deleniti similique facere ab corporis voluptates modi quidem magnam! Nesciunt recusandae ullam explicabo sint maiores facere facilis voluptate commodi a. Nulla, dolor. Dicta, temporibus corporis quam illum beatae dolore, eveniet libero obcaecati voluptatum, repellendus nemo neque. Delectus officia voluptatibus aperiam? Cumque quae non quibusdam asperiores minus animi corporis, fugiat incidunt et, aut, atque dolor. Ratione adipisci laboriosam amet optio. Tempora nam dolore quo tenetur voluptatum explicabo aut pariatur atque possimus deleniti a provident, id incidunt asperiores nemo, aliquam facere officiis rem est ipsum quisquam quibusdam. Doloribus nisi consequuntur voluptas labore. Nemo minus mollitia earum id magnam praesentium explicabo quisquam optio deleniti sint dolorum numquam rerum amet minima beatae autem vitae, quo assumenda voluptatem ipsam. Explicabo sed aspernatur odio accusamus magni laborum totam, illo est tempora accusantium beatae! Laborum necessitatibus commodi ut tempore harum nisi facere itaque culpa repellat quas cupiditate molestiae, aspernatur possimus pariatur eligendi molestias numquam accusantium voluptate amet! Id, facilis! Corporis facere debitis vel repellat fugit assumenda, aspernatur reprehenderit illum distinctio quod, ipsum labore est quia animi nisi ipsa provident quaerat voluptates harum praesentium corrupti consequuntur. Dignissimos necessitatibus eum a obcaecati illum quis, consequatur iure excepturi ut architecto ipsum illo nihil aut aliquid sapiente tenetur iusto autem animi et nobis nulla velit harum commodi? Beatae ut recusandae, doloremque incidunt in impedit qui voluptatem cum neque expedita dolore quaerat officiis adipisci earum assumenda rem nostrum modi. Amet odit quibusdam nemo necessitatibus repudiandae tenetur? Nihil amet soluta velit quae fugit. Blanditiis, odio eum. Dignissimos, corrupti consectetur reiciendis ullam doloremque nesciunt, natus commodi, eum id nobis cupiditate provident minima deserunt exercitationem maxime? Doloribus eaque veniam debitis, eos sed voluptates vel dolores eum, ipsa culpa quibusdam, rerum fuga tenetur modi dolore.</p>
-   <!-- Footer Placeholder -->
- <div id="footer-container"></div>
-    <script type="module">
-       import {createFooterComponent} from '../src/scripts/Footer.js'; 
-       const footerContainer = document.getElementById('footer-container');
-       footerContainer.appendChild(createFooterComponent());
-    </script>
+    <!-- Script section ends here -->
   </body>
 </html>

@@ -82,27 +82,33 @@
       </div>
     </div>
 
-    <!-- PG  page code begin here -->
+    <!-- UG  page code begin here -->
     <div class="m-5 p-5 text-xl border border-gray-500 rounded-lg box-shadow">
       <div class="grid md:grid-flow-col gap-20">
         <ul class="border-gray-700 mt-14 bg-white shadow-lg p-4">
           <li
             class="border-gray-400 bg-white rounded border m-1 mb-3 p-2 cursor-pointer text-center font-semibold hover:bg-blue-700 hover:text-white"
-            id="toursim1"
+            id="BBA"
           >
-            MBA (Toursim) 2yrs
+            BBA (Aviation Management)
+          </li>
+          <li
+            class="border-gray-400 bg-white rounded border m-1 mb-3 p-2 cursor-pointer text-center font-semibold hover:bg-blue-700 hover:text-white"
+            id="BcomR"
+          >
+            B.Com (Retail Operations)
           </li>
           <li
             class="border-gray-400 bg-white rounded border m-1 p-2 cursor-pointer text-center font-semibold hover:bg-blue-700 hover:text-white"
-            id="toursim2"
+            id="BcomL"
           >
-            MBA (Toursim) 5yrs
+            B.Com (Logistics)
           </li>
         </ul>
-        <!-- MBA Tourism 2 years details -->
+        <!-- BBA (Aviation Management)-->
         <div class="block" id="data1">
           <h2 class="text-center font-bold text-2xl text-blue-950 mb-3 md:mb-0">
-            MBA TOURISM 2yrs
+            BBA (Aviation Management)
           </h2>
           <div class="flex flex-col bg-white shadow-lg">
             <h3 class="font-bold text-xl underline text-blue-950 md:m-0 m-2">
@@ -165,10 +171,76 @@
           </table>
         </div>
 
-        <!-- MBA Tourism 5 years details -->
+        <!-- B.Com (Retail Operations) -->
         <div class="hidden" id="data2">
           <h2 class="text-center font-bold text-2xl text-blue-950 md:mb-0 mb-3">
-            MBA TOURISM 5yrs
+            B.Com (Retail Operations)
+          </h2>
+          <div class="flex flex-col bg-white shadow-lg">
+            <h3 class="font-bold text-xl underline text-blue-950 md:m-0 m-2">
+              About Programm:
+            </h3>
+            <p class="text-justify p-4 md:text-xl text-base">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus
+              beatae, saepe itaque molestias consequatur pariatur totam vitae
+              voluptas, corrupti delectus harum eius ratione! Ad totam eum
+              cupiditate nemo officiis aspernatur reprehenderit eius labore
+              maxime quo natus, sequi amet nihil, soluta architecto tempora
+              dolorum voluptatum! Corrupti voluptatem quasi quis molestiae
+              asperiores temporibus. Provident fugit ipsam quaerat accusantium,
+              optio eos illo possimus dignissimos, quisquam tenetur obcaecati
+              cumque, nemo aliquam autem? Quas cumque deleniti neque iusto nisi
+              quia quaerat quibusdam tenetur saepe, voluptate aut animi dolore
+              modi dolor atque quis illum cupiditate, eum possimus culpa.
+              Voluptatum
+            </p>
+          </div>
+          <table class="mt-10 bg-white shadow-lg">
+            <thead class="border border-blue-950">
+              <tr class="border border-blue-950">
+                <th
+                  class="border border-blue-950 p-2 text-center md:text-xl text-base"
+                >
+                  Girls Fess
+                </th>
+                <th
+                  class="border border-blue-950 p-2 text-center md:text-xl text-base"
+                >
+                  Boys Fess
+                </th>
+                <th
+                  class="border border-blue-950 p-2 text-center md:text-xl text-base"
+                >
+                  Total Seats
+                </th>
+              </tr>
+            </thead>
+            <tbody class="border border-blue-950">
+              <tr>
+                <td
+                  class="border border-blue-950 p-2 text-center md:text-xl text-base"
+                >
+                  3000
+                </td>
+                <td
+                  class="border border-blue-950 p-2 text-center md:text-xl text-base"
+                >
+                  5000
+                </td>
+                <td
+                  class="border border-blue-950 p-2 text-center md:text-xl text-base"
+                >
+                  26
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- B.Com (Logistics) -->
+        <div class="hidden" id="data3">
+          <h2 class="text-center font-bold text-2xl text-blue-950 md:mb-0 mb-3">
+            B.Com (Logistics)
           </h2>
           <div class="flex flex-col bg-white shadow-lg">
             <h3 class="font-bold text-xl underline text-blue-950 md:m-0 m-2">
@@ -233,6 +305,7 @@
       </div>
     </div>
     <!-- PG  page code ends here -->
+
     <script>
       // JavaScript for handling the drawer (menu toggle)
       const menuBtn = document.getElementById("menu-btn");
@@ -272,18 +345,28 @@
 
     <!-- Javascript for handling toggle between MBA tourism 2years and MBA tourism 5 years-->
     <script>
-      const t2 = document.getElementById("toursim2");
-      const t1 = document.getElementById("toursim1");
+      const t3 = document.getElementById("BcomL");
+      const t2 = document.getElementById("BcomR");
+      const t1 = document.getElementById("BBA");
       const data1 = document.getElementById("data1");
       const data2 = document.getElementById("data2");
+      const data3 = document.getElementById("data3");
 
       t1.addEventListener("click", () => {
         data1.classList.remove("hidden");
         data2.classList.add("hidden");
+        data3.classList.add("hidden");
       });
 
       t2.addEventListener("click", () => {
         data2.classList.remove("hidden");
+        data1.classList.add("hidden");
+        data3.classList.add("hidden");
+      });
+
+      t3.addEventListener("click", () => {
+        data3.classList.remove("hidden");
+        data2.classList.add("hidden");
         data1.classList.add("hidden");
       });
     </script>
