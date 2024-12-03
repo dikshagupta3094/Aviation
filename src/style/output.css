@@ -1758,20 +1758,16 @@ video {
     width: 10rem;
   }
 
+  .md\:w-72 {
+    width: 18rem;
+  }
+
   .md\:w-\[400px\] {
     width: 400px;
   }
 
   .md\:w-auto {
     width: auto;
-  }
-
-  .md\:w-64 {
-    width: 16rem;
-  }
-
-  .md\:w-72 {
-    width: 18rem;
   }
 
   .md\:grid-flow-col {

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Satham</title>
+    <link rel="stylesheet" href="../src/style/output.css" />
+  </head>
+  <body>
+    <!-- Header Placeholder -->
+    <div id="header-container"></div>
+    <script type="module">
+      import { createHeaderComponent } from "../src/scripts/Header.js";
+      const headerContainer = document.getElementById("header-container");
+      headerContainer.appendChild(createHeaderComponent());
+    </script>
+    <!-- Drawer (Hidden for desktop) -->
+    <div class="md:hidden">
+      <button id="menu-btn" class="text-2xl p-2 fixed top-0">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div
+        id="drawer"
+        class="hidden fixed left-0 top-0 w-64 bg-white shadow-md h-full z-10"
+      >
+        <button id="close-btn" class="p-4 text-2xl">
+          <i class="fas fa-times"></i>
+        </button>
+        <ul class="p-4 space-y-6">
+          <li>
+            <a href="./index.html" class="flex items-center"
+              ><i class="fas fa-home mr-3"></i>Home</a
+            >
+          </li>
+          <li>
+            <a href="./about.html" class="flex items-center"
+              ><i class="fas fa-plane mr-3"></i>About</a
+            >
+          </li>
+          <div class="flex items-center">
+            <i class="fas fa-book mr-3"></i>
+            <div
+              class="flex items-center gap-1 relative"
+              id="academicsDropdown"
+            >
+              <ul>
+                Academics
+              </ul>
+              <i class="fa-solid fa-caret-down"></i>
+            </div>
+          </div>
+          <li>
+            <a href="./faculties.html" class="flex items-center"
+              ><i class="fas fa-users mr-3"></i>Faculties</a
+            >
+          </li>
+          <li>
+            <a href="./events.html" class="flex items-center"
+              ><i class="fas fa-calendar-alt mr-3"></i>Events & Activities</a
+            >
+          </li>
+          <li>
+            <a href="./corporate.html" class="flex items-center"
+              ><i class="fas fa-industry mr-3"></i>Corporate Linkages</a
+            >
+          </li>
+          <li>
+            <a href="./mous.html" class="flex items-center"
+              ><i class="fas fa-handshake mr-3"></i>MOUs</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Faculties section begins here -->
+
+    <section>
+        <div>
+            <img src="" alt="Image">
+        </div>
+    </section>
+    <!-- Faculties section ends here -->
+
+    <!-- Javascript to handle drawer -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const drawer = document.getElementById("drawer");
+      const closeBtn = document.getElementById("close-btn");
+
+      menuBtn.addEventListener("click", () => {
+        drawer.classList.toggle("hidden");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        drawer.classList.add("hidden");
+      });
+    </script>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-container"></div>
+    <script type="module">
+      import { createFooterComponent } from "../src/scripts/Footer.js";
+      const footerContainer = document.getElementById("footer-container");
+      footerContainer.appendChild(createFooterComponent());
+    </script>
+  </body>
+</html>
