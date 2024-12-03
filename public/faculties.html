@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Satham</title>
     <link rel="stylesheet" href="../src/style/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <!-- Header Placeholder -->
@@ -75,11 +82,13 @@
 
     <!-- Faculties section begins here -->
 
-    <section>
-        <div>
-            <img src="" alt="Image">
-        </div>
+    <section
+      class="flex flex-wrap justify-center items-center gap-10 bg-[url('../assest/BackgroundImage.jpg')]"
+      id="list"
+    >
+      <!-- Card render dynamically -->
     </section>
+
     <!-- Faculties section ends here -->
 
     <!-- Javascript to handle drawer -->
@@ -95,6 +104,29 @@
       closeBtn.addEventListener("click", () => {
         drawer.classList.add("hidden");
       });
+
+      //Javascript to handle academics dropdown
+
+      const academics = document.getElementById("academicsDropdown");
+      academics.addEventListener("click", () => {
+        const dropdown = `<div class = 'absolute left-0 top-5  mt-2  flex flex-col items-center justify-center text-black'>
+          <ul class = 'flex flex-col w-[200px]'>
+          <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'> <a href = ${"./PG.html"}>PG Course</a></li>
+          <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./UG.html"}>UG Course</a></li>
+          <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./Diploma.html"}>Diploma Course</a></li>
+          <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./Certificate.html"}>Certificate Course</a></li>
+          </ul>
+        </div>`;
+        const existingDropdown = academics.querySelector(".dropdown");
+        if (existingDropdown) {
+          existingDropdown.remove(); // Remove if it exists
+        } else {
+          const menu = document.createElement("div");
+          menu.classList.add("dropdown"); // Add a class to identify it
+          menu.innerHTML = dropdown;
+          academics.appendChild(menu);
+        }
+      });
     </script>
 
     <!-- Footer Placeholder -->
@@ -104,5 +136,7 @@
       const footerContainer = document.getElementById("footer-container");
       footerContainer.appendChild(createFooterComponent());
     </script>
+
+    <script src="../src/scripts/faculties.js"></script>
   </body>
 </html>
