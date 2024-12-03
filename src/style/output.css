@@ -1007,8 +1007,8 @@ video {
   --tw-bg-opacity: 0.6;
 }
 
-.bg-\[url\(\'\.\/assets\/Home\/ticket\.svg\'\)\] {
-  background-image: url('./assets/Home/ticket.svg');
+.bg-noticeboard {
+  background-image: url('/src/assest/ticket.jpg');
 }
 
 .bg-\[length\:15\%_auto\] {
