@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Satham</title>
+    <link rel="stylesheet" href="../src/style/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Header Placeholder -->
+    <div id="header-container"></div>
+    <script type="module">
+      import { createHeaderComponent } from "../src/scripts/Header.js";
+      const headerContainer = document.getElementById("header-container");
+      headerContainer.appendChild(createHeaderComponent());
+    </script>
+    <!-- Drawer (Hidden for desktop) -->
+    <div class="md:hidden">
+      <button id="menu-btn" class="text-2xl p-2 fixed top-0">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div
+        id="drawer"
+        class="hidden fixed left-0 top-0 w-64 bg-white shadow-md h-full z-10"
+      >
+        <button id="close-btn" class="p-4 text-2xl">
+          <i class="fas fa-times"></i>
+        </button>
+        <ul class="p-4 space-y-6">
+          <li>
+            <a href="./index.html" class="flex items-center"
+              ><i class="fas fa-home mr-3"></i>Home</a
+            >
+          </li>
+          <li>
+            <a href="./about.html" class="flex items-center"
+              ><i class="fas fa-plane mr-3"></i>About</a
+            >
+          </li>
+          <div class="flex items-center">
+            <i class="fas fa-book mr-3"></i>
+            <div
+              class="flex items-center gap-1 relative"
+              id="academicsDropdown"
+            >
+              <ul>
+                Academics
+              </ul>
+              <i class="fa-solid fa-caret-down"></i>
+            </div>
+          </div>
+          <li>
+            <a href="./faculties.html" class="flex items-center"
+              ><i class="fas fa-users mr-3"></i>Faculties</a
+            >
+          </li>
+          <li>
+            <a href="./events.html" class="flex items-center"
+              ><i class="fas fa-calendar-alt mr-3"></i>Events & Activities</a
+            >
+          </li>
+          <li>
+            <a href="./corporate.html" class="flex items-center"
+              ><i class="fas fa-industry mr-3"></i>Corporate Linkages</a
+            >
+          </li>
+          <li>
+            <a href="./mous.html" class="flex items-center"
+              ><i class="fas fa-handshake mr-3"></i>MOUs</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Fess structure tabel begin here -->
+    <section class="flex items-center justify-center m-4 p-4">
+      <div class=" overflow-x-auto">
+        <table
+        class="w-full max-w-5xl border-collapse border border-gray-300 boxShadow rounded-lg overflow-hidden"
+        
+        id="fees"
+      >
+        <thead class="bg-blue-900 border border-black">
+          <tr>
+              <th class="border border-gray-300 p-4 text-lg font-semibold text-white">
+                 S.No
+                </th>
+            <th class="border border-gray-300 p-4 text-lg font-semibold text-white">
+              Course Name
+            </th>
+            <th class="border border-gray-300 p-4 text-lg font-semibold text-white">
+              Fess Per Semester (Rs/-)
+            </th>
+            <th class="border border-gray-300 p-4 text-lg font-semibold text-white">
+              Seats
+            </th>
+            <th class="border border-gray-300 p-4 text-lg font-semibold text-white">
+              Duration
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+        <!-- Table body  insert by javascript -->
+        </tbody>
+      </table>
+      </div>
+      </section>
+    <!-- Fess structure tabel  ends here -->
+     
+    <!-- Javascript to handle drawer -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const drawer = document.getElementById("drawer");
+      const closeBtn = document.getElementById("close-btn");
+
+      menuBtn.addEventListener("click", () => {
+        drawer.classList.toggle("hidden");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        drawer.classList.add("hidden");
+      });
+
+      //Javascript to handle academics dropdown
+
+      const academics = document.getElementById("academicsDropdown");
+      academics.addEventListener("click", () => {
+        const dropdown = `<div class = 'absolute left-0 top-5  mt-2  flex flex-col items-center justify-center text-black'>
+          <ul class = 'flex flex-col w-[200px]'>
+          <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'> <a href = ${"./PG.html"}>PG Course</a></li>
+          <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./UG.html"}>UG Course</a></li>
+          <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./Diploma.html"}>Diploma Course</a></li>
+          <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./Certificate.html"}>Certificate Course</a></li>
+          </ul>
+        </div>`;
+        const existingDropdown = academics.querySelector(".dropdown");
+        if (existingDropdown) {
+          existingDropdown.remove(); // Remove if it exists
+        } else {
+          const menu = document.createElement("div");
+          menu.classList.add("dropdown"); // Add a class to identify it
+          menu.innerHTML = dropdown;
+          academics.appendChild(menu);
+        }
+      });
+    </script>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-container"></div>
+    <script type="module">
+      import { createFooterComponent } from "../src/scripts/Footer.js";
+      const footerContainer = document.getElementById("footer-container");
+      footerContainer.appendChild(createFooterComponent());
+    </script>
+    <script src="../src/scripts/fessStructure.js"></script>
+  </body>
+</html>

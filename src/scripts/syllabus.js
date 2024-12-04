@@ -28,8 +28,6 @@ let data = [
 const list = document.getElementById("syllabus");
 
 function getData() {
-
-
 data.forEach((item) => {
     list.innerHTML += `
     <tr class="border border-gray-300 hover:bg-gray-100">

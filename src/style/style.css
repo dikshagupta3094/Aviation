@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-.boxShadow:hover{
-    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1)  , -10px -10px 10px white ;
+.boxShadow{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 
