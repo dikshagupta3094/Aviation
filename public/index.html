@@ -382,7 +382,7 @@
             Trusted Partners
           </h1>
           <div class="overflow-hidden relative w-full h-[220px]">
-            <div id="marquee-container" class="flex items-center gap-10">
+            <div id="TrustedPartnermarquee-container" class="flex items-center gap-10">
               <!-- Images will be dynamically added here -->
             </div>
           </div>
@@ -402,7 +402,7 @@
           ];
 
           // Add slides to the marquee
-          const marqueeContainer = document.getElementById("marquee-container");
+          const marqueeContainer = document.getElementById("TrustedPartnermarquee-container");
           slides.forEach(({ slide, key }) => {
             const img = document.createElement("img");
             img.src = slide;
@@ -419,27 +419,27 @@
           };
 
           // Marquee Animation
-          const startMarquee = () => {
+          const TrustedPartnerstartMarquee = () => {
             const speed = 0.6; // Adjust scrolling speed
             let offset = 0;
 
-            const animate = () => {
+            const TrustedPartneranimate = () => {
               offset -= speed;
               const containerWidth = marqueeContainer.scrollWidth / 2;
               if (Math.abs(offset) >= containerWidth) {
                 offset = 0; // Reset to make it seamless
               }
               marqueeContainer.style.transform = `translateX(${offset}px)`;
-              requestAnimationFrame(animate);
+              requestAnimationFrame(TrustedPartneranimate);
             };
 
-            animate();
+            TrustedPartneranimate();
           };
 
           // Initialize marquee on DOMContentLoaded
           document.addEventListener("DOMContentLoaded", () => {
             duplicateSlides();
-            startMarquee();
+            TrustedPartnerstartMarquee();
           });
         </script>
 
