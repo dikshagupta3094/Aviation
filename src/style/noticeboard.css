@@ -1,6 +1,6 @@
 
     /* Container Styles */
-    .container {
+    .NoticeBoardcontainer {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -22,7 +22,7 @@
 }
 
 /* Flex container div */
-.flex-container {
+.NoticeBoardflex-container {
   display: flex;
   flex-direction: column;
   align-items: center;
