@@ -80,17 +80,29 @@
       </div>
     </div>
 
-    <!-- Faculties section begins here -->
-
-    <section
-      class="flex flex-wrap justify-center items-center gap-10 bg-[url('../assest/BackgroundImage.jpg')] "
-      id="list"
-    > 
-      <!-- Card render dynamically -->
-    </section>
-
-    <!-- Faculties section ends here -->
-
+    <!-- Syllabus Download code begin here -->
+     <section class="flex items-center justify-center m-4 p-4">
+        <table
+          class="w-full max-w-5xl border-collapse border border-gray-300 shadow-md rounded-lg overflow-hidden"
+          id="syllabus"
+        >
+          <thead class="bg-gray-200">
+            <tr>
+              <th class="border border-gray-300 p-4 text-lg font-semibold text-gray-700">
+                Course Name
+              </th>
+              <th class="border border-gray-300 p-4 text-lg font-semibold text-gray-700">
+                Download Complete Syllabus
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Rows will be injected by JavaScript -->
+          </tbody>
+        </table>
+      </section>
+    <!-- Syllabus Download code ends here -->
+     
     <!-- Javascript to handle drawer -->
     <script>
       const menuBtn = document.getElementById("menu-btn");
@@ -136,7 +148,6 @@
       const footerContainer = document.getElementById("footer-container");
       footerContainer.appendChild(createFooterComponent());
     </script>
-
-    <script src="../src/scripts/faculties.js"></script>
+    <script src="../src/scripts/syllabus.js"></script>
   </body>
 </html>

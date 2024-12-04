@@ -19,8 +19,7 @@ export const Downloads = [
   { name: "Academic Calendar", link: "#" },
   {
     name: "Syllabus",
-    link: "Syllabus/BComSyllabus.zip",
-    isDownload: true,
+    link: "./syllabus.html",
   },
 ];
 
