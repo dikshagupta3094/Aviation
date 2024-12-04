@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SATHM Home</title>
     <link rel="stylesheet" href="../src/style/output.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="../src/style/noticeboard.css" />
+    <link rel="stylesheet" href="../src/style/msgfromdirector.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -28,44 +27,265 @@
       headerContainer.appendChild(createHeaderComponent());
     </script>
 
-    <!-- Noticeboard and other home components-->
-    <!-- JavaScript Modules -->
-    <div id="home-layout">
-      <div
-        id="Home-Components"
-        class="flex flex-col items-center justify-center"
-        style="
-          background-image: url('../src/assest/BackgroundImage.jpg');
-          background-size: 100%;
-        "
-      ></div>
+      <!-- Noticeboard and other home components-->
+             <!-- JavaScript Modules -->
+    
+      <!-- Main Noticeboard Container -->
+       <div class="background-image">
+      <div class="flex-container background-imgae">
+        <div class="container">
+        <!-- Large Notice Board -->
+        <div class="large-notice-board" id="largeNoticeBoard">
+          <div class="large-notice-content" onmouseover="stopMarquee()" onmouseout="startMarquee()">
+            <marquee direction="up" scrollamount="4" id="noticeMarquee" ></marquee>
+          </div>
+        </div>
+    
+        <!-- Small Notice Board -->
+        <div class="small-notice-board" id="smallNoticeBoard">
+          <h2 class="heading">Notifications</h2>
+          <div class="notice-list" onmouseover="stopMarquee()" onmouseout="startMarquee()">
+            <marquee direction="up" scrollamount="4" id="noticeMarqueeSmall"></marquee>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div className="mt-10 w-[75%]">
+        
+      </div>
+
+      <!-- Message from director -->
+      <div >
+        <div id="mfd-container" class="mfd-bg-white mfd-border mfd-rounded-lg mfd-mx-4 mfd-mt-8">
+          <h1 id="mfd-heading" class="mfd-text-white mfd-text-center mfd-text-4xl mfd-p-4 mfd-font-bold mfd-bg-blue-900 mfd-text-shadow">
+              MESSAGE FROM DIRECTOR
+          </h1>
+          <div id="mfd-content" class="mfd-flex mfd-flex-col md-mfd-flex-col lg-mfd-flex-row mfd-items-center mfd-justify-center mfd-gap-10 mfd-mx-2 mfd-rounded-lg" data-aos="fade-zoom-in">
+              <div id="mfd-image-container" class="mfd-image-container">
+                  <img src="../src/assest/DirectorImage.jpg" alt="Director Image" id="mfd-director-image" class="mfd-box-shadow mfd-m-3 mfd-rounded-lg mfd-h-250px mfd-w-250px md-mfd-h-400px md-mfd-w-400px sm-custom-mfd-h-300px sm-custom-mfd-w-300px">
+              </div>
+              <div id="mfd-text-container" class="mfd-w-80">
+                  <p class="mfd-text-justify mfd-pt-8 mfd-px-2 mfd-text-sm md-mfd-text-base lg-mfd-h-40 lg-mfd-overflow-clip">
+                      I welcome you on behalf of School Of Tourism, Aviation And Hospitality Management (SATHM), DAVV, which is a premiere department of central India recently opened on 22 July ‘24. The department provides high-quality education in the field of aviation, tourism, and hospitality management. The department is equipped with a mix of young and experienced professionals, industry experts with in-depth knowledge and expertise in the subject area. The department will soon churn out enthusiastic and efficient young professionals as per the need of the Aviation, Tourism, and Hospitality industry market. We provide holistic development of students by giving them a platform to participate in inter-college activities like sports, cultural clubs, community services, field visits, etc., for greater academic achievement. We would expect that you venture beyond your “Comfort Zones” both inside and outside the classrooms. Take maximum advantage of facilities, participate fully, and evolve into 'Brand Yourself'.</p>
+                  <p class="mfd-px-2" style="text-align:justified;">
+                      I thank you for showing your interest in SATHM, which means a family, and by joining SATHM, you are embarking on an education system that is meant to be transformative – academically, socially, morally, and personally. As “Excellence and Values” are our guiding principles which are reflected in every activity of our Department, we believe in a well-rounded and all-pervasive student experience to maximize learning opportunities. Through the efforts of our accomplished faculty, our talented students, and exceptional alumni, we have been able to make rapid progress on our path of continuous growth and innovation.
+                  </p>
+                  <a href="./about.html" id="mfd-read-more" class="mfd-read-more mfd-text-blue-950 mfd-font-extrabold">
+                      Read more...
+                  </a>
+                  <p id="mfd-director-name" class="mfd-font-semibold mfd-text-18px mfd-text-shadow1">Dr. Preeti Singh</p>
+                  <p id="mfd-director-position" class="mfd-font-semibold mfd-text-18px mfd-pb-1 mfd-text-shadow1">
+                      Director <span>SATHM</span>, DAVV
+                  </p>
+              </div>
+          </div>
+      </div>
+    
+  <!-- Pradhan Mantri School of Excellence -->
     </div>
+    <div class="bg-gray-100 p-6">
+      <div class="bg-white border-4 shadow-lg mx-auto max-w-7xl mt-8 border-blue-950 rounded-lg">
+          <h1 class="text-white text-center text-4xl p-6 font-bold shadow-md bg-blue-900">
+              PRADHAN MANTRI COLLEGES OF EXCELLENCE
+          </h1>
+          <div
+              class="flex flex-col lg:flex-row items-center justify-center gap-8 p-6"
+              data-aos="fade-zoom-in"
+          >
+              <!-- Paragraph Content -->
+              <div class="lg:w-2/5 w-full p-4">
+                  <p class="mb-4 text-justify leading-7">
+                      Since July 2024, The Pradhan Mantri Colleges of Excellence aim to
+                      provide holistic, quality, and employment-oriented education in Madhya Pradesh.
+                      Principals and teachers are selected based on merit, ensuring skilled
+                      administrators and educators. Infrastructure development includes lab equipment,
+                      library, sports facilities, furniture, etc., and new facilities with a budget of
+                      Rs 336 crore and an annual expenditure of Rs 150 crore for 2232 new posts. As
+                      many as 1845 academic posts and 387 posts for class III and IV categories were
+                      created for 55 colleges.
+                  </p>
+                  <p class="text-justify leading-7">
+                      The Indian Knowledge System Cell is being established under the National
+                      Education Policy-2020, providing access to traditional Indian texts and
+                      educational resources. These colleges focus on multi-faculty education,
+                      postgraduate courses, and modern pedagogy through IT. One of those colleges is
+                      <span class="text-blue-950 font-bold text-xl">SATHM</span>.
+                  </p>
+              </div>
+              <!-- Image 1 -->
+              <div class="lg:w-1/4 w-full flex justify-center">
+                  <img
+                      src="../src/assest/PMCollege1.jpg"
+                      alt="PM College 1"
+                      class="shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-110 rounded-md h-auto w-full"
+                  />
+              </div>
+              <!-- Image 2 -->
+              <div class="lg:w-1/4 w-full flex justify-center">
+                  <img
+                      src="../src/assest/PMCollege2.jpg"
+                      alt="PM College 2"
+                      class="shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-110 rounded-md h-auto w-full"
+                  />
+              </div>
+          </div>
+      </div>
+  <!-- Trusted Partners -->
+  <div class="mt-4 bg-gray-200 py-8">
+    <h1 class="text-center text-4xl font-semibold text-gray-700 mb-6">
+      Trusted Partners
+    </h1>
+    <div class="overflow-hidden relative w-full h-[220px]">
+      <div
+        id="marquee-container"
+        class="flex items-center gap-10"
+      >
+        <!-- Images will be dynamically added here -->
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    // Define the slides (ensure these paths are correct)
+    const slides = [
+      { slide: '../src/assest/Trusted/mpfc.png', key: '1' },
+      { slide: '../src/assest/Trusted/DABH.png', key: '2' },
+      { slide: '../src/assest/Trusted/mpfc.png', key: '3' },
+      { slide: '../src/assest/Trusted/DABH.png', key: '4' },
+      { slide: '../src/assest/Trusted/mpfc.png', key: '5' },
+      { slide: '../src/assest/Trusted/DABH.png', key: '6' },
+      { slide: '../src/assest/Trusted/mpfc.png', key: '7' },
+      { slide: '../src/assest/Trusted/DABH.png', key: '8' },
+    ];
+  
+    // Add slides to the marquee
+    const marqueeContainer = document.getElementById("marquee-container");
+    slides.forEach(({ slide, key }) => {
+      const img = document.createElement("img");
+      img.src = slide;
+      img.alt = `Slide ${key}`;
+      img.className =
+        "w-[200px] h-[150px] object-contain rounded-md  transition-transform hover:scale-110 duration-300";
+      marqueeContainer.appendChild(img);
+    });
+  
+    // Duplicate slides for infinite scrolling
+    const duplicateSlides = () => {
+      const originalSlides = marqueeContainer.innerHTML;
+      marqueeContainer.innerHTML += originalSlides;
+    };
+  
+    // Marquee Animation
+    const startMarquee = () => {
+      const speed = 0.60; // Adjust scrolling speed
+      let offset = 0;
+  
+      const animate = () => {
+        offset -= speed;
+        const containerWidth = marqueeContainer.scrollWidth / 2;
+        if (Math.abs(offset) >= containerWidth) {
+          offset = 0; // Reset to make it seamless
+        }
+        marqueeContainer.style.transform = `translateX(${offset}px)`;
+        requestAnimationFrame(animate);
+      };
+  
+      animate();
+    };
+  
+    // Initialize marquee on DOMContentLoaded
+    document.addEventListener("DOMContentLoaded", () => {
+      duplicateSlides();
+      startMarquee();
+    });
+  </script>
+  
+  
+   
+      <!-- AOS Library -->
+      <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+      <script>
+          // Initialize AOS
+          AOS.init({
+              offset: 300,
+              easing: "ease-in-sine",
+              duration: 500,
+          });
+      </script>
+  </div>
+  
+  
 
-    <script type="module">
-      console.log("The Script is running");
-      import initNoticeBoard from "../src/scripts/Noticeboard.js";
-      initNoticeBoard();
-
-      document.addEventListener("DOMContentLoaded", () => {
-        // Initialize AOS animations
-        AOS.init({
-          offset: 300,
-          easing: "ease-in-sine",
-          duration: 500,
-        });
-
-        // Load and render components
-        document.addEventListener("DOMContentLoaded", () => {
-          if (initNoticeBoard() == null) {
-            // This checks for both null and undefined
-            console.log("NoticeBoard doesn't returns any value");
-          } else {
-            console.log("The value was appended");
-          }
-        });
+      </div>
+      <!-- script for message from director -->
+       <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const elements = document.querySelectorAll("[data-aos='fade-zoom-in']");
+          const observer = new IntersectionObserver((entries) => {
+              entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                      entry.target.classList.add("aos-animate");
+                  }
+              });
+          }, { threshold: 0.5 });
+      
+          elements.forEach((el) => observer.observe(el));
       });
-    </script>
-    <!-- Notice board ends here -->
+      
+       </script>
+
+      <!-- script for notice board -->
+      <script>
+
+        // Sample notices list
+        const notices = [
+          {
+            id: 1,
+            title: 'Exam Schedule for Semester 2024',
+            date: 'September 15, 2024',
+            description: 'The final exam schedule for the semester is now available. Please check the university portal for details.',
+          },
+          {
+            id: 2,
+            title: 'New Library Hours',
+            date: 'September 10, 2024',
+            description: 'The library will now be open from 8 AM to 10 PM on weekdays and 9 AM to 5 PM on weekends.',
+          },
+          // Add more notices as needed
+        ];
+    
+        // Populate notices dynamically
+        function populateNotices() {
+          const largeNoticeMarquee = document.getElementById('noticeMarquee');
+          const smallNoticeMarquee = document.getElementById('noticeMarqueeSmall');
+    
+          // Generate notice items HTML
+          const noticesHtml = notices.map(notice => `
+            <li class="notice-item">
+              <h3 class="notice-title">${notice.title}</h3>
+              <p class="notice-date">${notice.date}</p>
+              <p class="notice-description">${notice.description}</p>
+            </li>
+          `).join('');
+    
+          // Insert notices HTML into both large and small marquee elements
+          largeNoticeMarquee.innerHTML = `<ul>${noticesHtml}</ul>`;
+          smallNoticeMarquee.innerHTML = `<ul>${noticesHtml}</ul>`;
+        }
+    
+        // Stop and start marquee on hover
+        function stopMarquee() {
+          document.querySelectorAll('marquee').forEach((marquee) => marquee.stop());
+        }
+    
+        function startMarquee() {
+          document.querySelectorAll('marquee').forEach((marquee) => marquee.start());
+        }
+    
+        // Initialize the notice board on page load
+        document.addEventListener('DOMContentLoaded', populateNotices);
+        document.addEventListener('DOMContentLoaded', startMarquee);
+      </script>
 
     <!-- Drawer (Hidden for Desktop)  -->
     <div class="md:hidden">
@@ -126,68 +346,12 @@
       </div>
     </div>
 
-    <section class="bg-white border-4 border-blue-950 mx-4 rounded-lg mt-8">
-      <h1
-        class="text-white text-center text-4xl p-4 font-bold bg-blue-900 text-shadow"
-      >
-        MESSAGE FROM DIRECTOR
-      </h1>
-      <div
-        class="flex flex-col md:flex-col lg:flex-row items-center justify-center gap-10 mx-2 rounded-lg"
-        data-aos="fade-zoom-in"
-      >
-        <div>
-          <img
-            src="path_to_image/DirectorImage.jpg"
-            alt="Director Image"
-            class="box-shadow m-3 rounded-lg h-[250px] w-[250px] md:h-[400px] md:w-[400px] sm-custom:h-[300px] sm-custom:w-[300px]"
-          />
-        </div>
-        <div class="w-[80%]">
-          <p
-            class="text-justify pt-8 px-2 text-sm md:text-base lg:h-96 lg:overflow-clip"
-          >
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus
-            adipisci eius perspiciatis tenetur quam saepe iusto aliquid magni
-            rerum, exercitationem maxime harum totam autem cum corporis
-            similique illum aspernatur, repellat ex dolore unde. Veniam
-            perferendis modi amet voluptas eligendi distinctio ratione
-            similique, alias doloremque, explicabo dolor asperiores iure, sed
-            doloribus corrupti vitae. Illum eveniet laboriosam voluptatem,
-            aspernatur tempore a, natus omnis consequuntur maiores
-            exercitationem fugiat consectetur unde, explicabo possimus odit
-            eaque aliquam suscipit adipisci ab quae temporibus minus amet
-            deserunt? Magnam eos itaque unde excepturi necessitatibus molestiae
-            ab repellendus, eveniet quasi soluta ea architecto id, quam eum
-            corrupti quos impedit! Lorem ipsum dolor sit amet consectetur,
-            adipisicing elit. Dolor est explicabo eius repellendus et, enim a
-            praesentium nisi sit repudiandae suscipit assumenda? Error, eveniet?
-            Nemo, autem distinctio laboriosam sequi quam voluptates magnam quae
-            dignissimos omnis facilis pariatur hic temporibus asperiores qui!
-            Totam delectus blanditiis quas, ab, similique esse illum commodi
-            eaque quis libero velit molestias, ad magni provident a quaerat
-            animi. Officia, commodi placeat maiores repellat vero non culpa.
-            Modi sunt animi quae, delectus libero nemo, ullam aliquid fuga nisi
-            non laborum exercitationem porro saepe esse consequuntur nihil,
-            voluptatibus unde minima voluptatem! Ab non eligendi id officiis
-            natus dolorum distinctio nemo? Obcaecati error recusandae voluptas,
-            quaerat maiores. Adipisci necessitatibus tempore recusandae! Ipsa,
-            commodi illum saepe, autem atque numquam, quaerat dolores animi odio
-            rerum fuga. Ipsam, tenetur! Itaque perspiciatis veniam deserunt sint
-            quae.
-          </p>
-          <a href="/directormsg">
-            <button class="text-blue-950 font-extrabold">Read more...</button>
-          </a>
-          <p class="font-semibold text-xl">Dr. Preeti Singh</p>
-          <p class="font-semibold text-xl pb-1">
-            Director <span>SATHM</span>, DAVV
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Script section begins here  -->
+   
+      
+    <!-- Footer Placeholder -->
+    <footer ">
+        
+    </footer>
 
     <script>
       // Script for handling the drawer (menu toggle)

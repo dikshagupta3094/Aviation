@@ -10,7 +10,9 @@ module.exports = {
     "./src/style/*.css"       // All CSS files in the styles folder (if needed)
 ],
   theme: {
-    extend: {},
+    extend: {
+      'noticeboard':"url('../src/assest/ticket.jpg')",
+    },
   },
   plugins: [],
 }

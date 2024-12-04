@@ -20,7 +20,7 @@ function renderLargeNoticeBoard() {
   const container = document.createElement('div');
   container.classList.add(
     'flex', 'box-shadow', 'bg-cover', 'bg-center', 'overflow-hidden',
-    'rounded-lg', 'p-4', 'lg:w-[75%]', 'lg:h-96', 'mt-32', 'mb-32'
+    'rounded-lg', 'p-4', 'lg:w-[75%]', 'lg:h-96', 'my-32'
   );
   container.style.backgroundImage = "url('../src/assest/ticket.jpg')";
 
@@ -28,7 +28,7 @@ function renderLargeNoticeBoard() {
   innerContainer.classList.add('w-96', 'ml-40', 'my-16', 'mb-16', 'overflow-hidden');
 
   const marquee = document.createElement('marquee');
-  marquee.classList.add('h-52');
+  marquee.classList.add('h-52','p-4');
   marquee.setAttribute('scrollamount', '4');
   marquee.setAttribute('direction', 'up');
   marquee.addEventListener('mouseover', (e) => e.target.stop());
@@ -39,7 +39,7 @@ function renderLargeNoticeBoard() {
 
   notices.forEach((notice) => {
     const li = document.createElement('li');
-    li.classList.add('p-2','w-[50%]', 'bg-white', 'rounded', 'shadow-md');
+    li.classList.add('p-4','w-[50%]','bg-white', 'rounded', 'shadow-md');
     li.innerHTML = `
       <h3 class="font-bold">${notice.title}</h3>
       <p class="text-gray-600">${notice.date}</p>

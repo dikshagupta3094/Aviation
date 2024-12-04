@@ -1,0 +1,124 @@
+
+    /* Container Styles */
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 75%;
+      width: 85%;
+      border-radius: 8px; /* Equivalent to `rounded-md` */ /* Adjust the color as needed; bg-opacity-60 adds 60% opacity */
+      margin-top: 2.5rem; /* my-10 */
+      margin-bottom: 2.5rem; /* my-10 */
+      padding-left: 0.25rem; /* pl-5 */
+      padding-bottom: 2.5rem; /* pb-10 */
+      padding-right: 1.25rem; /* pr-5 */
+    
+    }
+  /* Background Image*/
+.background-image{
+  background-image: url('/src/assest/BackgroundImage.jpg');
+      background-size:100%;
+      border-radius: 20px;
+}
+
+/* Flex container div */
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+    /* Large Notice Board Styles */
+    .large-notice-board {
+      display: flex;
+      background-image: url('/src/assest/ticket.jpg');
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 75%;
+      height: 500px;
+      overflow: hidden;
+      border-radius: 20px;
+      padding: 5px;
+    }
+
+    .large-notice-content {
+      width: 100%;
+      max-width: 400px;
+      margin: auto;
+      margin-left:170px;
+      overflow: hidden;
+      height: 200px;
+    }
+
+    /* Small Notice Board Styles */
+    .small-notice-board {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      padding: 20px;
+      margin-top: 10px;
+    }
+
+    /* Heading */
+    .heading {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: white;
+      background-color: #1e3a8a;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    /* Notice List */
+    .notice-list {
+      overflow-y: hidden;
+      height: 150px;
+      margin-left: 10px;
+    }
+
+    /* Notice Item */
+    .notice-item {
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+
+    /* Notice Title, Date, Description */
+    .notice-title {
+      font-size: 1.1rem;
+      color: #1e3a8a;
+      font-weight: bold;
+    }
+
+    .notice-date {
+      font-size: 0.875rem;
+      color: #6b7280;
+    }
+
+    .notice-description {
+      color: #4b5563;
+      margin-top: 8px;
+    }
+
+    /* Responsive Media Query */
+    @media (min-width: 1367px) {
+      .small-notice-board {
+        display: none;
+      }
+      .large-notice-board {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 1368px) {
+      .large-notice-board {
+        display: none;
+      }
+      .small-notice-board {
+        display: block;
+      }
+    }
+  
