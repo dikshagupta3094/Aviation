@@ -80,17 +80,41 @@
       </div>
     </div>
 
-    <!-- Faculties section begins here -->
-
-    <section
-      class="flex flex-wrap justify-center items-center gap-10 bg-[url('../assest/BackgroundImage.jpg')] "
-      id="list"
-    > 
-      <!-- Card render dynamically -->
-    </section>
-
-    <!-- Faculties section ends here -->
-
+    <!-- Fess structure tabel begin here -->
+    <section class="flex items-center justify-center m-4 p-4">
+      <div class=" overflow-x-auto">
+        <table
+        class="w-full max-w-5xl border-collapse border border-gray-300 boxShadow rounded-lg overflow-hidden"
+        
+        id="fees"
+      >
+        <thead class="bg-blue-900 border border-black">
+          <tr>
+              <th class="border border-gray-300 p-4 text-lg font-semibold text-white">
+                 S.No
+                </th>
+            <th class="border border-gray-300 p-4 text-lg font-semibold text-white">
+              Course Name
+            </th>
+            <th class="border border-gray-300 p-4 text-lg font-semibold text-white">
+              Fess Per Semester (Rs/-)
+            </th>
+            <th class="border border-gray-300 p-4 text-lg font-semibold text-white">
+              Seats
+            </th>
+            <th class="border border-gray-300 p-4 text-lg font-semibold text-white">
+              Duration
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+        <!-- Table body  insert by javascript -->
+        </tbody>
+      </table>
+      </div>
+      </section>
+    <!-- Fess structure tabel  ends here -->
+     
     <!-- Javascript to handle drawer -->
     <script>
       const menuBtn = document.getElementById("menu-btn");
@@ -136,7 +160,6 @@
       const footerContainer = document.getElementById("footer-container");
       footerContainer.appendChild(createFooterComponent());
     </script>
-
-    <script src="../src/scripts/faculties.js"></script>
+    <script src="../src/scripts/fessStructure.js"></script>
   </body>
 </html>

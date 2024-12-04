@@ -2,7 +2,7 @@ const currentDate = new Date();
 const year = currentDate.getFullYear();
 
 export const Admission = [
-  { name: "Fees Structure", link: '/allCourses' },
+  { name: "Fees Structure", link: './feeStructure.html' },
   { name: `Admission ${year}`, link: "#" },
 ];
 
@@ -19,8 +19,7 @@ export const Downloads = [
   { name: "Academic Calendar", link: "#" },
   {
     name: "Syllabus",
-    link: "Syllabus/BComSyllabus.zip",
-    isDownload: true,
+    link: "./syllabus.html",
   },
 ];
 

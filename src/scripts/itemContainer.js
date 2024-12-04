@@ -92,7 +92,7 @@ export function createItemsContainer() {
   let link = document.createTextNode("About developers");
   developers.appendChild(link);
   developers.title = "About developers";
-  developers.href = "#";
+  developers.href = "./aboutdeveloper.html";
   textright.appendChild(developers);
 
   footerContainer.appendChild(ulElement);
