@@ -1487,13 +1487,11 @@ video {
   --tw-bg-opacity: 0.6;
 }
 
-<<<<<<< HEAD
 .bg-noticeboard {
-  background-image: url('/src/assest/ticket.jpg');
-=======
+  background-image: url('/src/assest/ticket.jpg');}
+  
 .bg-\[url\(\'\.\.\/assest\/BackgroundImage\.jpg\'\)\] {
   background-image: url('../assest/BackgroundImage.jpg');
->>>>>>> 350ecc8670b70b4c0fabfb797d346c52624884a0
 }
 
 .bg-\[length\:15\%_auto\] {
