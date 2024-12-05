@@ -16,10 +16,80 @@
   <body>
     <!-- Header Placeholder starts -->
     <div id="header-container"></div>
+    <nav
+      id="NavBar"
+      class="md:border-b md:border-gray-400 sticky top-0 z-50 md:py-2 md:bg-blue-950"
+    >
+      <ul
+        class="hidden md:flex md:justify-around md:items-center text-white text-[18px] font-bold gap-2 p-2"
+      >
+        <li>
+          <a href="./index.html" class="hover:text-blue-700 hover:underline"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a href="./about.html" class="hover:text-blue-700 hover:underline"
+            >About</a
+          >
+        </li>
+        <div
+          class="hover:text-blue-700 cursor-pointer flex items-center justify-center gap-1 relative hover:underline"
+          id="academics"
+        >
+          <ul>
+            Academics
+          </ul>
+          <i class="fa-solid fa-caret-down"></i>
+        </div>
+        <li>
+          <a href="./faculties.html" class="hover:text-blue-700 hover:underline"
+            >Faculties</a
+          >
+        </li>
+        <li>
+          <a href="./events.html" class="hover:text-blue-700 hover:underline"
+            >Events & Activities</a
+          >
+        </li>
+        <li>
+          <a href="./corporate.html" class="hover:text-blue-700 hover:underline"
+            >Corporate Linkages</a
+          >
+        </li>
+        <li>
+          <a href="./mous.html" class="hover:text-blue-700 hover:underline"
+            >MOUs</a
+          >
+        </li>
+      </ul>
+    </nav>
     <script type="module">
       import { createHeaderComponent } from "../src/scripts/Header.js";
       const headerContainer = document.getElementById("header-container");
       headerContainer.appendChild(createHeaderComponent());
+      //Navbar Dropdown Script
+      const academic = document.getElementById("academics");
+      academic.addEventListener("click", () => {
+        const dropdown = `<div class = 'absolute left-0 top-9 mt-2 w-max space-x-20 space-y-20 flex flex-col items-center justify-center text-black'>
+   <ul class = 'flex flex-col'>
+   <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'> <a href = ${"./PG.html"}>PG Course</a></li>
+   <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./UG.html"}>UG Course</a></li>
+   <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./Diploma.html"}>Diploma Course</a></li>
+   <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./Certificate.html"}>Certificate Course</a></li>
+   </ul>
+ </div>`;
+
+        const existingDropdown = academic.querySelector(".dropdown");
+        if (existingDropdown) {
+          existingDropdown.remove(); // Remove if it exists
+        } else {
+          const menu = document.createElement("div");
+          menu.classList.add("dropdown"); // Add a class to identify it
+          menu.innerHTML = dropdown;
+          academic.appendChild(menu);
+        }
+      });
     </script>
     <!-- Header Placeholder end -->
 
@@ -88,11 +158,9 @@
         <ul class="border-gray-700 mt-14 bg-white shadow-lg p-4">
           <li
             class="border-gray-400 bg-white rounded border m-1 mb-3 p-2 cursor-pointer text-center font-semibold hover:bg-blue-700 hover:text-white"
-           
           >
-          Diploma In Aviation Security
+            Diploma In Aviation Security
           </li>
-         
         </ul>
         <!-- Diploma Course details -->
         <div class="block" id="data1">
@@ -159,7 +227,6 @@
             </tbody>
           </table>
         </div>
-        
       </div>
     </div>
     <!-- Diploma  page code ends here -->
@@ -199,8 +266,6 @@
         }
       });
     </script>
-
-    
 
     <!-- Footer Placeholder start -->
     <div id="footer-container"></div>

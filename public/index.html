@@ -21,15 +21,84 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   </head>
 
-  <body>
+  <body class="relative">
     <!-- Header Placeholder -->
     <div id="header-container"></div>
+    <nav
+      id="NavBar"
+      class="md:border-b md:border-gray-400 sticky top-0 z-50 md:py-2 md:bg-blue-950"
+    >
+      <ul
+        class="hidden md:flex md:justify-around md:items-center text-white text-[18px] font-bold gap-2 p-2"
+      >
+        <li>
+          <a href="./index.html" class="hover:text-blue-700 hover:underline"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a href="./about.html" class="hover:text-blue-700 hover:underline"
+            >About</a
+          >
+        </li>
+        <div
+          class="hover:text-blue-700 cursor-pointer flex items-center justify-center gap-1 relative hover:underline"
+          id="academics"
+        >
+          <ul>
+            Academics
+          </ul>
+          <i class="fa-solid fa-caret-down"></i>
+        </div>
+        <li>
+          <a href="./faculties.html" class="hover:text-blue-700 hover:underline"
+            >Faculties</a
+          >
+        </li>
+        <li>
+          <a href="./events.html" class="hover:text-blue-700 hover:underline"
+            >Events & Activities</a
+          >
+        </li>
+        <li>
+          <a href="./corporate.html" class="hover:text-blue-700 hover:underline"
+            >Corporate Linkages</a
+          >
+        </li>
+        <li>
+          <a href="./mous.html" class="hover:text-blue-700 hover:underline"
+            >MOUs</a
+          >
+        </li>
+      </ul>
+    </nav>
     <script type="module">
       import { createHeaderComponent } from "../src/scripts/Header.js";
       const headerContainer = document.getElementById("header-container");
       headerContainer.appendChild(createHeaderComponent());
-    </script>
+      //Navbar Dropdown Script
+      const academic = document.getElementById("academics");
+      academic.addEventListener("click", () => {
+        const dropdown = `<div class = 'absolute left-0 top-9 mt-2 w-max space-x-20 space-y-20 flex flex-col items-center justify-center text-black'>
+     <ul class = 'flex flex-col'>
+     <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'> <a href = ${"./PG.html"}>PG Course</a></li>
+     <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./UG.html"}>UG Course</a></li>
+     <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./Diploma.html"}>Diploma Course</a></li>
+     <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./Certificate.html"}>Certificate Course</a></li>
+     </ul>
+   </div>`;
 
+        const existingDropdown = academic.querySelector(".dropdown");
+        if (existingDropdown) {
+          existingDropdown.remove(); // Remove if it exists
+        } else {
+          const menu = document.createElement("div");
+          menu.classList.add("dropdown"); // Add a class to identify it
+          menu.innerHTML = dropdown;
+          academic.appendChild(menu);
+        }
+      });
+    </script>
     <!-- Drawer (Hidden for Desktop)  -->
     <div class="md:hidden">
       <button id="menu-btn" class="text-2xl p-2 fixed top-0">
@@ -129,18 +198,20 @@
       </div>
 
       <!-- Carousel Wrapper -->
-      <div class="carousel-container relative overflow-hidden max-w-7xl mx-auto bg-white border-blue-950 border-4 rounded-lg">
+      <div
+        class="carousel-container relative overflow-hidden max-w-7xl mx-auto bg-white border-blue-950 border-4 rounded-lg"
+      >
         <!-- Carousel Content -->
         <div
           id="carousel"
           class="flex transition-transform duration-300 border-blue-950 ease-in-out"
           style="transform: translateX(0%)"
         >
-        <img
-        src="../src/assest/Crasouel/BBA.jpg"
-        alt="Slide 2"
-        class="w-full h-auto max-h-[700px] object-contain flex-shrink-0"
-      />
+          <img
+            src="../src/assest/Crasouel/BBA.jpg"
+            alt="Slide 2"
+            class="w-full h-auto max-h-[700px] object-contain flex-shrink-0"
+          />
           <img
             src="../src/assest/Crasouel/Img2.jpg"
             alt="Slide 2"
@@ -167,38 +238,76 @@
             class="w-full h-auto max-h-[700px] object-contain flex-shrink-0"
           />
         </div>
-      
+
         <!-- Navigation Buttons -->
         <div class="absolute inset-0 flex items-center justify-between p-4">
           <button id="prevBtn">
-            <div class="bg-white rounded-full p-2 shadow text-black hover:bg-slate-200">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            <div
+              class="bg-white rounded-full p-2 shadow text-black hover:bg-slate-200"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 19l-7-7 7-7"
+                />
               </svg>
             </div>
           </button>
           <button id="nextBtn">
-            <div class="bg-white rounded-full p-2 shadow text-black hover:bg-slate-400">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            <div
+              class="bg-white rounded-full p-2 shadow text-black hover:bg-slate-400"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 5l7 7-7 7"
+                />
               </svg>
             </div>
           </button>
         </div>
-      
+
         <!-- Indicator Dots -->
         <div class="absolute bottom-4 right-0 left-0">
           <div class="flex items-center justify-center gap-2">
-            <div class="indicator-dot w-3 h-3 bg-blue-950 rounded-full bg-opacity-50"></div>
-            <div class="indicator-dot w-3 h-3 bg-blue-950 rounded-full bg-opacity-50"></div>
-            <div class="indicator-dot w-3 h-3 bg-blue-950 rounded-full bg-opacity-50"></div>
-            <div class="indicator-dot w-3 h-3 bg-blue-950 rounded-full bg-opacity-50"></div>
-            <div class="indicator-dot w-3 h-3 bg-blue-950 rounded-full bg-opacity-50"></div>
-            <div class="indicator-dot w-3 h-3 bg-blue-950 rounded-full bg-opacity-50"></div>
+            <div
+              class="indicator-dot w-3 h-3 bg-blue-950 rounded-full bg-opacity-50"
+            ></div>
+            <div
+              class="indicator-dot w-3 h-3 bg-blue-950 rounded-full bg-opacity-50"
+            ></div>
+            <div
+              class="indicator-dot w-3 h-3 bg-blue-950 rounded-full bg-opacity-50"
+            ></div>
+            <div
+              class="indicator-dot w-3 h-3 bg-blue-950 rounded-full bg-opacity-50"
+            ></div>
+            <div
+              class="indicator-dot w-3 h-3 bg-blue-950 rounded-full bg-opacity-50"
+            ></div>
+            <div
+              class="indicator-dot w-3 h-3 bg-blue-950 rounded-full bg-opacity-50"
+            ></div>
           </div>
         </div>
       </div>
-      
+
       <script>
         const images = document.querySelectorAll("#carousel img");
         const carousel = document.getElementById("carousel");
@@ -208,7 +317,7 @@
         let currentSlide = 0;
         const autoSlide = true;
         const autoSlideInterval = 3000;
-      
+
         const updateSlide = () => {
           carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
           dots.forEach((dot, index) => {
@@ -216,25 +325,25 @@
             dot.classList.toggle("bg-opacity-50", index !== currentSlide);
           });
         };
-      
+
         const nextSlide = () => {
           currentSlide = (currentSlide + 1) % images.length;
           updateSlide();
         };
-      
+
         const prevSlide = () => {
-          currentSlide = currentSlide === 0 ? images.length - 1 : currentSlide - 1;
+          currentSlide =
+            currentSlide === 0 ? images.length - 1 : currentSlide - 1;
           updateSlide();
         };
-      
+
         nextBtn.addEventListener("click", nextSlide);
         prevBtn.addEventListener("click", prevSlide);
-      
+
         if (autoSlide) {
           setInterval(nextSlide, autoSlideInterval);
         }
       </script>
-      
 
       <!-- Message from director -->
       <div class="max-w-7xl mx-auto">
@@ -382,7 +491,10 @@
             Trusted Partners
           </h1>
           <div class="overflow-hidden relative w-full h-[220px]">
-            <div id="TrustedPartnermarquee-container" class="flex items-center gap-10">
+            <div
+              id="TrustedPartnermarquee-container"
+              class="flex items-center gap-10"
+            >
               <!-- Images will be dynamically added here -->
             </div>
           </div>
@@ -402,7 +514,9 @@
           ];
 
           // Add slides to the marquee
-          const marqueeContainer = document.getElementById("TrustedPartnermarquee-container");
+          const marqueeContainer = document.getElementById(
+            "TrustedPartnermarquee-container"
+          );
           slides.forEach(({ slide, key }) => {
             const img = document.createElement("img");
             img.src = slide;
