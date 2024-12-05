@@ -1,6 +1,6 @@
 export function createHeaderComponent() {
   const headerHTML = `
-    <div class="flex flex-col items-center justify-center p-3 bg-cover" style="background-image: url('../src/assest/Logo/image_bg3.jpg')">
+    <div class="flex flex-col items-center justify-center p-3 bg-cover" style="background-image: url('../src/assest/Logo/image_bg2.jpg')">
         <div class="flex flex-col md:flex-row items-center justify-between w-full space-y-4 md:space-y-0 md:space-x-4 lg:space-x-8">
             <img src="../src/assest/Logo/Devi_Ahilya_Vishwavidyalaya_Logo.png" class="md:w-36 md:h-36 hidden md:block" alt="Devi Ahilya Logo" />
             <img src="../src/assest/Logo/sathm_logo_without_background.png" class="block md:hidden w-40 h-40" alt="Small Device Logo" />
