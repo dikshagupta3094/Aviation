@@ -16,6 +16,10 @@ let data = [
     link: "../src/assest/syllabus/B.ComRetailOperations_3Years.pdf",
   },
   {
+    name: "B.com (Logistics)",
+    link: "../src/assest/syllabus/BComLogisitcs_MP.pdf",
+  },
+  {
     name: "Diploma In Aviation Security",
     link: "../src/assest/syllabus/Diploma_in_Aviation_Security_...._Syllabus.doc",
   },

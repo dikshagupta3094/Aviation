@@ -16,9 +16,7 @@
     }
   /* Background Image*/
 .background-image{
-     background-image: url('/src/assest/BackgroundImage.jpg');
-      background-size:cover;
-      
+     background-image: url('/src/assest/BackgroundImage.jpg');   
 }
 
 /* Flex container div */
