@@ -19,8 +19,7 @@ export function createHeaderComponent() {
             <img src="../src/assest/Logo/sathm_logo_without_background.png" alt="SATHM Logo" class="md:w-40 md:h-40 hidden md:block" />
         </div>
     </div>
-
-    <nav class="md:border-b md:border-gray-400 md:py-2 md:bg-blue-950">
+        <nav class="md:border-b md:border-gray-400 md:py-2 md:bg-blue-950">
         <ul class="hidden md:flex md:justify-around md:items-center text-white text-[18px] font-bold gap-2 p-2">
             <li><a href=${"./index.html"} class="hover:text-blue-700 hover:underline">Home</a></li>
             <li><a href=${"./about.html"} class="hover:text-blue-700 hover:underline">About</a></li>
@@ -33,8 +32,7 @@ export function createHeaderComponent() {
             <li><a href=${"./corporate.html"} class="hover:text-blue-700 hover:underline">Corporate Linkages</a></li>
             <li><a href=${"./mous.html"} class="hover:text-blue-700 hover:underline">MOUs</a></li>
         </ul>
-    </nav>
-    `;
+    </nav>`;
   const headerContainer = document.createElement("div");
   headerContainer.innerHTML = headerHTML;
 

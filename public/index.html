@@ -30,8 +30,8 @@
       headerContainer.appendChild(createHeaderComponent());
     </script>
 
-     <!-- Drawer (Hidden for Desktop)  -->
-     <div class="md:hidden">
+    <!-- Drawer (Hidden for Desktop)  -->
+    <div class="md:hidden">
       <button id="menu-btn" class="text-2xl p-2 fixed top-0">
         <i class="fa-solid fa-bars"></i>
       </button>
@@ -93,9 +93,8 @@
 
     <!-- Main Noticeboard Container -->
     <div class="background-image">
-      <div class="flex-container background-imgae">
-        <div class="container">
-
+      <div class="NoticeBoardflex-container background-imgae">
+        <div class="NoticeBoardcontainer">
           <!-- Large Notice Board -->
           <div class="large-notice-board" id="largeNoticeBoard">
             <div
@@ -129,12 +128,119 @@
         </div>
       </div>
 
+      <!-- Carousel Wrapper -->
+      <div class="carousel-container relative overflow-hidden max-w-7xl mx-auto bg-white border-blue-950 border-4 rounded-lg">
+        <!-- Carousel Content -->
+        <div
+          id="carousel"
+          class="flex transition-transform duration-300 border-blue-950 ease-in-out"
+          style="transform: translateX(0%)"
+        >
+        <img
+        src="../src/assest/Crasouel/BBA.jpg"
+        alt="Slide 2"
+        class="w-full h-auto max-h-[700px] object-contain flex-shrink-0"
+      />
+          <img
+            src="../src/assest/Crasouel/Img2.jpg"
+            alt="Slide 2"
+            class="w-full h-auto max-h-[700px] object-contain flex-shrink-0"
+          />
+          <img
+            src="../src/assest/Crasouel/Img3.jpg"
+            alt="Slide 3"
+            class="w-full h-auto max-h-[700px] object-contain flex-shrink-0"
+          />
+          <img
+            src="../src/assest/Crasouel/Img4.jpg"
+            alt="Slide 3"
+            class="w-full h-auto max-h-[700px] object-contain flex-shrink-0"
+          />
+          <img
+            src="../src/assest/Crasouel/Img5.jpg"
+            alt="Slide 3"
+            class="w-full h-auto max-h-[700px] object-contain flex-shrink-0"
+          />
+          <img
+            src="../src/assest/Crasouel/Img6.jpg"
+            alt="Slide 3"
+            class="w-full h-auto max-h-[700px] object-contain flex-shrink-0"
+          />
+        </div>
+      
+        <!-- Navigation Buttons -->
+        <div class="absolute inset-0 flex items-center justify-between p-4">
+          <button id="prevBtn">
+            <div class="bg-white rounded-full p-2 shadow text-black hover:bg-slate-200">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+            </div>
+          </button>
+          <button id="nextBtn">
+            <div class="bg-white rounded-full p-2 shadow text-black hover:bg-slate-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </button>
+        </div>
+      
+        <!-- Indicator Dots -->
+        <div class="absolute bottom-4 right-0 left-0">
+          <div class="flex items-center justify-center gap-2">
+            <div class="indicator-dot w-3 h-3 bg-blue-950 rounded-full bg-opacity-50"></div>
+            <div class="indicator-dot w-3 h-3 bg-blue-950 rounded-full bg-opacity-50"></div>
+            <div class="indicator-dot w-3 h-3 bg-blue-950 rounded-full bg-opacity-50"></div>
+            <div class="indicator-dot w-3 h-3 bg-blue-950 rounded-full bg-opacity-50"></div>
+            <div class="indicator-dot w-3 h-3 bg-blue-950 rounded-full bg-opacity-50"></div>
+            <div class="indicator-dot w-3 h-3 bg-blue-950 rounded-full bg-opacity-50"></div>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+        const images = document.querySelectorAll("#carousel img");
+        const carousel = document.getElementById("carousel");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        const dots = document.querySelectorAll(".indicator-dot");
+        let currentSlide = 0;
+        const autoSlide = true;
+        const autoSlideInterval = 3000;
+      
+        const updateSlide = () => {
+          carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+          dots.forEach((dot, index) => {
+            dot.classList.toggle("p-2", index === currentSlide);
+            dot.classList.toggle("bg-opacity-50", index !== currentSlide);
+          });
+        };
+      
+        const nextSlide = () => {
+          currentSlide = (currentSlide + 1) % images.length;
+          updateSlide();
+        };
+      
+        const prevSlide = () => {
+          currentSlide = currentSlide === 0 ? images.length - 1 : currentSlide - 1;
+          updateSlide();
+        };
+      
+        nextBtn.addEventListener("click", nextSlide);
+        prevBtn.addEventListener("click", prevSlide);
+      
+        if (autoSlide) {
+          setInterval(nextSlide, autoSlideInterval);
+        }
+      </script>
+      
 
       <!-- Message from director -->
-      <div>
+      <div class="max-w-7xl mx-auto">
         <div
           id="mfd-container"
-          class="mfd-bg-white mfd-border mfd-rounded-lg mfd-mx-4 mfd-mt-8"
+          class="mfd-bg-white mfd-border shadow-md mfd-rounded-lg mfd-mx-4 mfd-mt-8"
         >
           <h1
             id="mfd-heading"
@@ -269,14 +375,14 @@
             </div>
           </div>
         </div>
-        
+
         <!-- Trusted Partners -->
-        <div class="mt-4  py-8">
+        <div class="mt-4 py-8">
           <h1 class="text-center text-4xl font-semibold text-gray-700 mb-6">
             Trusted Partners
           </h1>
           <div class="overflow-hidden relative w-full h-[220px]">
-            <div id="marquee-container" class="flex items-center gap-10">
+            <div id="TrustedPartnermarquee-container" class="flex items-center gap-10">
               <!-- Images will be dynamically added here -->
             </div>
           </div>
@@ -296,7 +402,7 @@
           ];
 
           // Add slides to the marquee
-          const marqueeContainer = document.getElementById("marquee-container");
+          const marqueeContainer = document.getElementById("TrustedPartnermarquee-container");
           slides.forEach(({ slide, key }) => {
             const img = document.createElement("img");
             img.src = slide;
@@ -313,27 +419,27 @@
           };
 
           // Marquee Animation
-          const startMarquee = () => {
+          const TrustedPartnerstartMarquee = () => {
             const speed = 0.6; // Adjust scrolling speed
             let offset = 0;
 
-            const animate = () => {
+            const TrustedPartneranimate = () => {
               offset -= speed;
               const containerWidth = marqueeContainer.scrollWidth / 2;
               if (Math.abs(offset) >= containerWidth) {
                 offset = 0; // Reset to make it seamless
               }
               marqueeContainer.style.transform = `translateX(${offset}px)`;
-              requestAnimationFrame(animate);
+              requestAnimationFrame(TrustedPartneranimate);
             };
 
-            animate();
+            TrustedPartneranimate();
           };
 
           // Initialize marquee on DOMContentLoaded
           document.addEventListener("DOMContentLoaded", () => {
             duplicateSlides();
-            startMarquee();
+            TrustedPartnerstartMarquee();
           });
         </script>
 
@@ -430,8 +536,6 @@
       document.addEventListener("DOMContentLoaded", populateNotices);
       document.addEventListener("DOMContentLoaded", startMarquee);
     </script>
-
-   
 
     <script>
       // Script for handling the drawer (menu toggle)
