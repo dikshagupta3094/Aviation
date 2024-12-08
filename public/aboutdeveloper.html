@@ -153,7 +153,7 @@
     <!-- About developer code begins here -->
     <div className="w-full flex justify-center flex-col mt-10 mb-10">
       <div
-        class="flex flex-wrap justify-center items-center md:gap-20 gap-y-10 gap-x-20 mt-5 mx-2"
+        class="flex flex-wrap justify-center items-center md:gap-20 gap-y-10 gap-x-20 mt-5 mx-2 shadow-2xl"
         id="developer"
       >
         <!-- cards insert by javascript -->
@@ -209,16 +209,19 @@
       let developerData = [
         {
           name: "Aditya Agrawal",
+          course: "M.Tech IT (5yrs)",
           image: "../src/assest/Developer/Aditya_Agrawal.jpg",
           linkedin: "#",
         },
         {
           name: "Diksha Gupta",
+          course: "MCA (5yrs)",
           image: "../src/assest/Developer/Diksha_Gupta.jpeg",
           linkedin: "https://www.linkedin.com/in/diksha-gupta3094/",
         },
         {
           name: "Kashi Sankhla",
+          course: "MCA (5yrs)",
           image: "../src/assest/Developer/Kashi_Sankhla.jpg",
           linkedin: "https://bit.ly/KashiSankhlaLinkedinProfile",
         },
@@ -226,7 +229,7 @@
       const list = document.getElementById("developer");
       function getData() {
         developerData.forEach((data) => {
-          list.innerHTML += `<div class="flex flex-col items-center">
+          list.innerHTML += `<div class="flex flex-col items-center ">
             <div class="relative group">
               <a href=${data.linkedin} target="_blank">
                 <img
@@ -246,6 +249,9 @@
             <div class="text-center mt-2">
                 <p className="text-lg font-extrabold text-center cursor-pointer hover:text-purple-900">
                   ${data.name}
+                </p>
+                <p className="text-lg font-extrabold text-center cursor-pointer hover:text-purple-900">
+                  ${data.course}
                 </p>
             </div>
           </div>`;
