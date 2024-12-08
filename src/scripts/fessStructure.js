@@ -39,14 +39,7 @@ const tableData = [
       duration: "3 months",
       
     },
-    {
-      id: 6,
-      course: "B. SC. (Aviation Management)",
-      fee: "BOYS 28880, GIRLS 28672",
-      seats: 60,
-      duration: "4 yrs",
-      
-    },
+
   ];
 
   let fees = document.getElementById('fees')
