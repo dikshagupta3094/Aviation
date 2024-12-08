@@ -8,3 +8,8 @@
 .footerimage{
     background-image: url('../assest/final_bg.jpg');
 }
+
+.hover\\:underline:hover {
+    transition: all 1s ease-in-out;
+  }
+

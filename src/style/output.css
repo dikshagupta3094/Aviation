@@ -1054,6 +1054,18 @@ video {
   height: 100vh;
 }
 
+.h-14 {
+  height: 3.5rem;
+}
+
+.h-\[500px\] {
+  height: 500px;
+}
+
+.h-\[600px\] {
+  height: 600px;
+}
+
 .max-h-\[700px\] {
   max-height: 700px;
 }
@@ -1168,6 +1180,10 @@ video {
   width: max-content;
 }
 
+.min-w-96 {
+  min-width: 24rem;
+}
+
 .max-w-2xl {
   max-width: 42rem;
 }
@@ -1186,6 +1202,10 @@ video {
 
 .max-w-md {
   max-width: 28rem;
+}
+
+.max-w-96 {
+  max-width: 24rem;
 }
 
 .flex-shrink {
@@ -1398,6 +1418,10 @@ video {
 
 .overflow-x-auto {
   overflow-x: auto;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
 }
 
 .rounded {
@@ -2056,6 +2080,10 @@ video {
   background-image: url('../assest/final_bg.jpg');
 }
 
+.hover\\:underline:hover {
+  transition: all 1s ease-in-out;
+}
+
 .hover\:-translate-y-1:hover {
   --tw-translate-y: -0.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2223,6 +2251,10 @@ video {
     height: 10rem;
   }
 
+  .md\:h-\[600px\] {
+    height: 600px;
+  }
+
   .md\:w-2\/5 {
     width: 40%;
   }
@@ -2382,3 +2414,4 @@ video {
     line-height: 1.5;
   }
 }
+
