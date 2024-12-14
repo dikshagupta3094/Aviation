@@ -308,12 +308,14 @@
         </div>
       </div>
 
+      <!-- Script to handel Crasoul -->
       <script>
         const images = document.querySelectorAll("#carousel img");
         const carousel = document.getElementById("carousel");
         const prevBtn = document.getElementById("prevBtn");
         const nextBtn = document.getElementById("nextBtn");
         const dots = document.querySelectorAll(".indicator-dot");
+        const container = document.querySelector(".carousel-container");
         let currentSlide = 0;
         const autoSlide = true;
         const autoSlideInterval = 3000;
@@ -343,6 +345,8 @@
         if (autoSlide) {
           setInterval(nextSlide, autoSlideInterval);
         }
+
+
       </script>
 
       <!-- Message from director -->

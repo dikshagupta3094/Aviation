@@ -13,3 +13,17 @@
     transition: all 1s ease-in-out;
   }
 
+  /* .carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  #carousel img {
+    display: block;
+    object-fit: contain; 
+    max-height: 100%;   
+    max-width: 100%;    
+  } */
+  
