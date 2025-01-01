@@ -16,7 +16,7 @@ export const Miscellaneous = [
 ];
 
 export const Downloads = [
-  { name: "Academic Calendar", link: "#" },
+  { name: "Academic Calendar", link:"../src/assest/Academic_Calendar.pdf", isDownload:true },
   {
     name: "Syllabus",
     link: "./syllabus.html",
