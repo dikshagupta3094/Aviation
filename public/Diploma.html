@@ -76,7 +76,7 @@
    <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'> <a href = ${"./PG.html"}>PG Course</a></li>
    <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./UG.html"}>UG Course</a></li>
    <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./Diploma.html"}>Diploma Course</a></li>
-   <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./Certificate.html"}>Certificate Course</a></li>
+ 
    </ul>
  </div>`;
 
@@ -93,8 +93,8 @@
     </script>
     <!-- Header Placeholder end -->
 
-    <!-- Drawer (Hidden for Desktop)  -->
-    <div class="md:hidden">
+     <!-- Drawer (Hidden for Desktop)  -->
+     <div class="md:hidden">
       <button id="menu-btn" class="text-2xl p-2 fixed top-0">
         <i class="fa-solid fa-bars"></i>
       </button>
@@ -116,18 +116,29 @@
               ><i class="fas fa-plane mr-3"></i>About</a
             >
           </li>
-          <div class="flex items-center">
-            <i class="fas fa-book mr-3"></i>
-            <div
-              class="flex items-center gap-1 relative"
-              id="academicsDropdown"
-            >
-              <ul>
-                Academics
-              </ul>
-              <i class="fa-solid fa-caret-down"></i>
+          <li class="relative">
+            <div id="academicsDropdown" class="flex items-center cursor-pointer">
+              <i class="fas fa-book mr-3"></i>
+              <span>Academics</span>
+              <i class="fa-solid fa-caret-down ml-2"></i>
             </div>
-          </div>
+            <!-- Dropdown Content -->
+            <div id="academicsMenu" class="hidden mt-2">
+              <ul class="flex flex-col w-full">
+                <li class="p-2 text-center border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white">
+                  <a href="./PG.html">PG Course</a>
+                </li>
+                <li class="p-2 text-center border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white">
+                  <a href="./UG.html">UG Course</a>
+                </li>
+                <li class="p-2 text-center border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white">
+                  <a href="./Diploma.html">Diploma Course</a>
+                </li>
+               
+              </ul>
+            </div>
+          </li>
+
           <li>
             <a href="./faculties.html" class="flex items-center"
               ><i class="fas fa-users mr-3"></i>Faculties</a
@@ -186,6 +197,8 @@
       </div>
     </div>
     <!-- Diploma  page code ends here -->
+
+   <!-- Script sections -->
     <script>
       // JavaScript for handling the drawer (menu toggle)
       const menuBtn = document.getElementById("menu-btn");
@@ -201,26 +214,20 @@
       });
 
       //Script for handling academics dropdown menu
-      const academics = document.getElementById("academicsDropdown");
-      academics.addEventListener("click", () => {
-        const dropdown = `<div class = 'absolute left-0 top-5  mt-2  flex flex-col items-center justify-center text-black'>
-          <ul class = 'flex flex-col w-[200px]'>
-          <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'> <a href = ${"./PG.html"}>PG Course</a></li>
-          <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./UG.html"}>UG Course</a></li>
-          <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./Diploma.html"}>Diploma Course</a></li>
-          <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./Certificate.html"}>Certificate Course</a></li>
-          </ul>
-        </div>`;
-        const existingDropdown = academics.querySelector(".dropdown");
-        if (existingDropdown) {
-          existingDropdown.remove(); // Remove if it exists
-        } else {
-          const menu = document.createElement("div");
-          menu.classList.add("dropdown"); // Add a class to identify it
-          menu.innerHTML = dropdown;
-          academics.appendChild(menu);
-        }
-      });
+
+      const academicsDropdown = document.getElementById("academicsDropdown");
+    const academicsMenu = document.getElementById("academicsMenu");
+
+// Toggle Academics Dropdown
+academicsDropdown.addEventListener("click", () => {
+  if (academicsMenu.classList.contains("hidden")) {
+    academicsMenu.classList.remove("hidden"); // Show dropdown
+    academicsMenu.classList.add("block");
+  } else {
+    academicsMenu.classList.remove("block"); // Hide dropdown
+    academicsMenu.classList.add("hidden");
+  }
+});
     </script>
 
     <!-- Footer Placeholder start -->

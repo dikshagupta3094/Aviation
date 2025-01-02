@@ -13,6 +13,9 @@
     transition: all 1s ease-in-out;
   }
 
+  #academicsMenu {
+    transition: max-height 0.5s ease-in-out;
+  }
   /* .carousel-container {
     display: flex;
     justify-content: center;

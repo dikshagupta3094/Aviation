@@ -91,19 +91,19 @@
         }
       });
     </script>
-    <!-- Drawer (Hidden for desktop) -->
+    <!-- Drawer (Hidden for Desktop)  -->
     <div class="md:hidden">
       <button id="menu-btn" class="text-2xl p-2 fixed top-0">
         <i class="fa-solid fa-bars"></i>
       </button>
       <div
         id="drawer"
-        class="hidden fixed left-0 top-0 w-64 bg-white shadow-md h-full z-10"
+        class="hidden fixed left-0 top-0 w-64 bg-white shadow-md h-full"
       >
         <button id="close-btn" class="p-4 text-2xl">
           <i class="fas fa-times"></i>
         </button>
-        <ul class="p-4 space-y-6">
+        <ul class="p-4 space-y-6 bg-[#f7f7f7]">
           <li>
             <a href="./index.html" class="flex items-center"
               ><i class="fas fa-home mr-3"></i>Home</a
@@ -114,18 +114,38 @@
               ><i class="fas fa-plane mr-3"></i>About</a
             >
           </li>
-          <div class="flex items-center">
-            <i class="fas fa-book mr-3"></i>
+          <li class="relative">
             <div
-              class="flex items-center gap-1 relative"
               id="academicsDropdown"
+              class="flex items-center cursor-pointer"
             >
-              <ul>
-                Academics
-              </ul>
-              <i class="fa-solid fa-caret-down"></i>
+              <i class="fas fa-book mr-3"></i>
+              <span>Academics</span>
+              <i class="fa-solid fa-caret-down ml-2"></i>
             </div>
-          </div>
+            <!-- Dropdown Content -->
+            <div id="academicsMenu" class="hidden mt-2">
+              <ul class="flex flex-col w-full">
+                <li
+                  class="p-2 text-center border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white"
+                >
+                  <a href="./PG.html">PG Course</a>
+                </li>
+                <li
+                  class="p-2 text-center border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white"
+                >
+                  <a href="./UG.html">UG Course</a>
+                </li>
+                <li
+                  class="p-2 text-center border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white"
+                >
+                  <a href="./Diploma.html">Diploma Course</a>
+                </li>
+            
+              </ul>
+            </div>
+          </li>
+
           <li>
             <a href="./faculties.html" class="flex items-center"
               ><i class="fas fa-users mr-3"></i>Faculties</a
@@ -149,7 +169,6 @@
         </ul>
       </div>
     </div>
-
     <!-- Fess structure tabel begin here -->
     <section class="flex items-center justify-center m-4 p-4">
       <div class="overflow-x-auto shadow-xl">
@@ -208,26 +227,19 @@
         drawer.classList.add("hidden");
       });
 
-      //Javascript to handle academics dropdown
+      //Script for handling academics dropdown menu
 
-      const academics = document.getElementById("academicsDropdown");
-      academics.addEventListener("click", () => {
-        const dropdown = `<div class = 'absolute left-0 top-5  mt-2  flex flex-col items-center justify-center text-black'>
-          <ul class = 'flex flex-col w-[200px]'>
-          <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'> <a href = ${"./PG.html"}>PG Course</a></li>
-          <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./UG.html"}>UG Course</a></li>
-          <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./Diploma.html"}>Diploma Course</a></li>
-          <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./Certificate.html"}>Certificate Course</a></li>
-          </ul>
-        </div>`;
-        const existingDropdown = academics.querySelector(".dropdown");
-        if (existingDropdown) {
-          existingDropdown.remove(); // Remove if it exists
+      const academicsDropdown = document.getElementById("academicsDropdown");
+      const academicsMenu = document.getElementById("academicsMenu");
+
+      // Toggle Academics Dropdown
+      academicsDropdown.addEventListener("click", () => {
+        if (academicsMenu.classList.contains("hidden")) {
+          academicsMenu.classList.remove("hidden"); // Show dropdown
+          academicsMenu.classList.add("block");
         } else {
-          const menu = document.createElement("div");
-          menu.classList.add("dropdown"); // Add a class to identify it
-          menu.innerHTML = dropdown;
-          academics.appendChild(menu);
+          academicsMenu.classList.remove("block"); // Hide dropdown
+          academicsMenu.classList.add("hidden");
         }
       });
     </script>
