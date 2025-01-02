@@ -72,111 +72,84 @@
         </li>
       </ul>
     </nav>
-    <script type="module">
-      import { createHeaderComponent } from "../src/scripts/Header.js";
-      const headerContainer = document.getElementById("header-container");
-      headerContainer.appendChild(createHeaderComponent());
-      //Navbar Dropdown Script
-      const academic = document.getElementById("academics");
-      academic.addEventListener("click", () => {
-        const dropdown = `<div class = 'absolute left-0 top-9 mt-2 w-max space-x-20 space-y-20 flex flex-col items-center justify-center text-black'>
-     <ul class = 'flex flex-col'>
-     <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'> <a href = ${"./PG.html"}>PG Course</a></li>
-     <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./UG.html"}>UG Course</a></li>
-     <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./Diploma.html"}>Diploma Course</a></li>
-     
-     </ul>
-   </div>`;
 
-        const existingDropdown = academic.querySelector(".dropdown");
-        if (existingDropdown) {
-          existingDropdown.remove(); // Remove if it exists
-        } else {
-          const menu = document.createElement("div");
-          menu.classList.add("dropdown"); // Add a class to identify it
-          menu.innerHTML = dropdown;
-          academic.appendChild(menu);
-        }
-      });
-    </script>
-      <!-- Drawer (Hidden for Desktop)  -->
-      <div class="md:hidden">
-        <button id="menu-btn" class="text-2xl p-2 fixed top-0">
-          <i class="fa-solid fa-bars"></i>
+    <!-- Drawer (Hidden for Desktop)  -->
+    <div class="md:hidden">
+      <button id="menu-btn" class="text-2xl p-2 fixed top-0">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div
+        id="drawer"
+        class="hidden fixed left-0 top-0 w-64 bg-white shadow-md h-full"
+      >
+        <button id="close-btn" class="p-4 text-2xl">
+          <i class="fas fa-times"></i>
         </button>
-        <div
-          id="drawer"
-          class="hidden fixed left-0 top-0 w-64 bg-white shadow-md h-full"
-        >
-          <button id="close-btn" class="p-4 text-2xl">
-            <i class="fas fa-times"></i>
-          </button>
-          <ul class="p-4 space-y-6 bg-[#f7f7f7]">
-            <li>
-              <a href="./index.html" class="flex items-center"
-                ><i class="fas fa-home mr-3"></i>Home</a
-              >
-            </li>
-            <li>
-              <a href="./about.html" class="flex items-center"
-                ><i class="fas fa-plane mr-3"></i>About</a
-              >
-            </li>
-            <li class="relative">
-              <div
-                id="academicsDropdown"
-                class="flex items-center cursor-pointer"
-              >
-                <i class="fas fa-book mr-3"></i>
-                <span>Academics</span>
-                <i class="fa-solid fa-caret-down ml-2"></i>
-              </div>
-              <!-- Dropdown Content -->
-              <div id="academicsMenu" class="hidden mt-2">
-                <ul class="flex flex-col w-full">
-                  <li
-                    class="p-2 text-center border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white"
-                  >
-                    <a href="./PG.html">PG Course</a>
-                  </li>
-                  <li
-                    class="p-2 text-center border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white"
-                  >
-                    <a href="./UG.html">UG Course</a>
-                  </li>
-                  <li
-                    class="p-2 text-center border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white"
-                  >
-                    <a href="./Diploma.html">Diploma Course</a>
-                  </li>
-              
-                </ul>
-              </div>
-            </li>
-  
-            <li>
-              <a href="./faculties.html" class="flex items-center"
-                ><i class="fas fa-users mr-3"></i>Faculties</a
-              >
-            </li>
-            <li>
-              <a href="./events.html" class="flex items-center"
-                ><i class="fas fa-calendar-alt mr-3"></i>Events & Activities</a
-              >
-            </li>
-            <li>
-              <a href="./corporate.html" class="flex items-center"
-                ><i class="fas fa-industry mr-3"></i>Corporate Linkages</a
-              >
-            </li>
-            <li>
-              <a href="./mous.html" class="flex items-center"
-                ><i class="fas fa-handshake mr-3"></i>MOUs</a
-              >
-            </li>
-          </ul>
-        </div>
+        <ul class="p-4 space-y-6 bg-[#f7f7f7]">
+          <li>
+            <a href="./index.html" class="flex items-center"
+              ><i class="fas fa-home mr-3"></i>Home</a
+            >
+          </li>
+          <li>
+            <a href="./about.html" class="flex items-center"
+              ><i class="fas fa-plane mr-3"></i>About</a
+            >
+          </li>
+          <li class="relative">
+            <div
+              id="academicsDropdown"
+              class="flex items-center cursor-pointer"
+            >
+              <i class="fas fa-book mr-3"></i>
+              <span>Academics</span>
+              <i class="fa-solid fa-caret-down ml-2"></i>
+            </div>
+            <!-- Dropdown Content -->
+            <div id="academicsMenu" class="hidden mt-2">
+              <ul class="flex flex-col w-full">
+                <li
+                  class="p-2 text-center border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white"
+                >
+                  <a href="./PG.html">PG Course</a>
+                </li>
+                <li
+                  class="p-2 text-center border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white"
+                >
+                  <a href="./UG.html">UG Course</a>
+                </li>
+                <li
+                  class="p-2 text-center border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white"
+                >
+                  <a href="./Diploma.html">Diploma Course</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li>
+            <a href="./faculties.html" class="flex items-center"
+              ><i class="fas fa-users mr-3"></i>Faculties</a
+            >
+          </li>
+          <li>
+            <a href="./events.html" class="flex items-center"
+              ><i class="fas fa-calendar-alt mr-3"></i>Events & Activities</a
+            >
+          </li>
+          <li>
+            <a href="./corporate.html" class="flex items-center"
+              ><i class="fas fa-industry mr-3"></i>Corporate Linkages</a
+            >
+          </li>
+          <li>
+            <a href="./mous.html" class="flex items-center"
+              ><i class="fas fa-handshake mr-3"></i>MOUs</a
+            >
+          </li>
+        </ul>
       </div>
+    </div>
 
     <!-- Noticeboard and other home components-->
 
@@ -365,8 +338,6 @@
         if (autoSlide) {
           setInterval(nextSlide, autoSlideInterval);
         }
-
-
       </script>
 
       <!-- Message from director -->
@@ -593,6 +564,40 @@
         </script>
       </div>
     </div>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-container"></div>
+
+    <!-- Script section begins here -->
+
+    <!-- Script for header module -->
+    <script type="module">
+      import { createHeaderComponent } from "../src/scripts/Header.js";
+      const headerContainer = document.getElementById("header-container");
+      headerContainer.appendChild(createHeaderComponent());
+      //Navbar Dropdown Script
+      const academic = document.getElementById("academics");
+      academic.addEventListener("click", () => {
+        const dropdown = `<div class = 'absolute left-0 top-9 mt-2 w-max space-x-20 space-y-20 flex flex-col items-center justify-center text-black'>
+     <ul class = 'flex flex-col'>
+     <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'> <a href = ${"./PG.html"}>PG Course</a></li>
+     <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./UG.html"}>UG Course</a></li>
+     <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./Diploma.html"}>Diploma Course</a></li>
+     </ul>
+   </div>`;
+
+        const existingDropdown = academic.querySelector(".dropdown");
+        if (existingDropdown) {
+          existingDropdown.remove(); // Remove if it exists
+        } else {
+          const menu = document.createElement("div");
+          menu.classList.add("dropdown"); // Add a class to identify it
+          menu.innerHTML = dropdown;
+          academic.appendChild(menu);
+        }
+      });
+    </script>
+
     <!-- script for message from director -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -618,19 +623,21 @@
       const notices = [
         {
           id: 1,
-          title: "Exam Schedule for Semester 2024",
-          date: "September 15, 2024",
+          title:
+            "Exam Schedule for all Academic Programs 2024 (Sept - Dec 2024)",
+          date: "January 02, 2025",
           description:
-            "The final exam schedule for the semester is now available. Please check the university portal for details.",
+            "The final exam for all Academic programs has been scheduled from 6th January 2025 (Monday)",
+          link: "#",
         },
         {
           id: 2,
-          title: "New Library Hours",
-          date: "September 10, 2024",
+          title: "New Semester Commencement",
+          date: "January 02, 2025",
           description:
-            "The library will now be open from 8 AM to 10 PM on weekdays and 9 AM to 5 PM on weekends.",
+            "The new semester for all the Academic programs will be commenced from 20th January, 2025 (Monday)",
         },
-        // Add more notices as needed
+        // Additional notices can be added here
       ];
 
       // Populate notices dynamically
@@ -641,15 +648,18 @@
 
         // Generate notice items HTML
         const noticesHtml = notices
-          .map(
-            (notice) => `
-            <li class="notice-item">
-              <h3 class="notice-title">${notice.title}</h3>
-              <p class="notice-date">${notice.date}</p>
-              <p class="notice-description">${notice.description}</p>
-            </li>
-          `
-          )
+          .map((notice) => {
+            const linkHtml = notice.link
+              ? `<a href="${notice.link}" class="notice-link text-blue-500 hover:text-blue-700" target="_blank">Exam Form Link</a>`
+              : "";
+            return `
+        <li class="notice-item">
+          <h3 class="notice-title">${notice.title}</h3>
+          <p class="notice-date">${notice.date}</p>
+          <p class="notice-description">${notice.description} ${linkHtml}</p>
+        </li>
+      `;
+          })
           .join("");
 
         // Insert notices HTML into both large and small marquee elements
@@ -675,8 +685,8 @@
       document.addEventListener("DOMContentLoaded", startMarquee);
     </script>
 
+    <!-- Script for handling the drawer (menu toggle) -->
     <script>
-      // Script for handling the drawer (menu toggle)
       const menuBtn = document.getElementById("menu-btn");
       const drawer = document.getElementById("drawer");
       const closeBtn = document.getElementById("close-btn");
@@ -688,9 +698,10 @@
       closeBtn.addEventListener("click", () => {
         drawer.classList.add("hidden");
       });
-         //Script for handling academics dropdown menu
 
-         const academicsDropdown = document.getElementById("academicsDropdown");
+      //Script for handling academics dropdown menu
+
+      const academicsDropdown = document.getElementById("academicsDropdown");
       const academicsMenu = document.getElementById("academicsMenu");
 
       // Toggle Academics Dropdown
@@ -704,8 +715,8 @@
         }
       });
     </script>
-    <!-- Footer Placeholder -->
-    <div id="footer-container"></div>
+
+    <!-- Script for Footer module -->
     <script type="module">
       import { createFooterComponent } from "../src/scripts/Footer.js";
       const footerContainer = document.getElementById("footer-container");

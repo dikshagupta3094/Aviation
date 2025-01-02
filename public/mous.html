@@ -64,32 +64,6 @@
         </li>
       </ul>
     </nav>
-    <script type="module">
-      import { createHeaderComponent } from "../src/scripts/Header.js";
-      const headerContainer = document.getElementById("header-container");
-      headerContainer.appendChild(createHeaderComponent());
-      //Navbar Dropdown Script
-      const academic = document.getElementById("academics");
-      academic.addEventListener("click", () => {
-        const dropdown = `<div class = 'absolute left-0 top-9 mt-2 w-max space-x-20 space-y-20 flex flex-col items-center justify-center text-black'>
-   <ul class = 'flex flex-col'>
-   <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'> <a href = ${"./PG.html"}>PG Course</a></li>
-   <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./UG.html"}>UG Course</a></li>
-   <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./Diploma.html"}>Diploma Course</a></li>
-   </ul>
- </div>`;
-
-        const existingDropdown = academic.querySelector(".dropdown");
-        if (existingDropdown) {
-          existingDropdown.remove(); // Remove if it exists
-        } else {
-          const menu = document.createElement("div");
-          menu.classList.add("dropdown"); // Add a class to identify it
-          menu.innerHTML = dropdown;
-          academic.appendChild(menu);
-        }
-      });
-    </script>
     <!-- Header Placeholder end -->
 
   <!-- Drawer (Hidden for Desktop)  -->
@@ -162,9 +136,7 @@
     </div>
   </div>
 
-    <!-- MOU page code begin here -->
-   
-    
+    <!-- MOU page code begin here -->    
     
     <div class="m-5 p-5 text-xl border border-gray-500 rounded-lg">
       <div class="relative overflow-hidden border shadow-md rounded-lg mb-6 ">
@@ -362,10 +334,42 @@
         </p>
       </p>
     </div>
+  </div>
+ </div>
 </div>
-</div>
-</div>
-    <!-- PG  page code ends here -->
+
+   <!-- Footer Placeholder start -->
+   <div id="footer-container"></div>
+    
+<!-- Script section begins here -->
+      <!-- Script for header module -->
+      <script type="module">
+        import { createHeaderComponent } from "../src/scripts/Header.js";
+        const headerContainer = document.getElementById("header-container");
+        headerContainer.appendChild(createHeaderComponent());
+        //Navbar Dropdown Script
+        const academic = document.getElementById("academics");
+        academic.addEventListener("click", () => {
+          const dropdown = `<div class = 'absolute left-0 top-9 mt-2 w-max space-x-20 space-y-20 flex flex-col items-center justify-center text-black'>
+     <ul class = 'flex flex-col'>
+     <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'> <a href = ${"./PG.html"}>PG Course</a></li>
+     <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./UG.html"}>UG Course</a></li>
+     <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./Diploma.html"}>Diploma Course</a></li>
+     </ul>
+   </div>`;
+  
+          const existingDropdown = academic.querySelector(".dropdown");
+          if (existingDropdown) {
+            existingDropdown.remove(); // Remove if it exists
+          } else {
+            const menu = document.createElement("div");
+            menu.classList.add("dropdown"); // Add a class to identify it
+            menu.innerHTML = dropdown;
+            academic.appendChild(menu);
+          }
+        });
+      </script>
+
     <script>
       // JavaScript for handling the drawer (menu toggle)
       const menuBtn = document.getElementById("menu-btn");
@@ -489,8 +493,7 @@ academicsDropdown.addEventListener("click", () => {
       });
     </script>
 
-    <!-- Footer Placeholder start -->
-    <div id="footer-container"></div>
+ <!-- Script for footer module -->
     <script type="module">
       import { createFooterComponent } from "../src/scripts/Footer.js";
       const footerContainer = document.getElementById("footer-container");
