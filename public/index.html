@@ -628,7 +628,7 @@
           date: "January 02, 2025",
           description:
             "The final exam for all Academic programs has been scheduled from 6th January 2025 (Monday)",
-          link: "#",
+          link: "../src/assest/Exam-form-all-subjects.pdf",
         },
         {
           id: 2,
@@ -650,7 +650,7 @@
         const noticesHtml = notices
           .map((notice) => {
             const linkHtml = notice.link
-              ? `<a href="${notice.link}" class="notice-link text-blue-500 hover:text-blue-700" target="_blank">Exam Form Link</a>`
+              ? `<a href="${notice.link}" class="notice-link text-blue-500 hover:text-blue-700" target="_blank" download >Exam Form Link</a>`
               : "";
             return `
         <li class="notice-item">
