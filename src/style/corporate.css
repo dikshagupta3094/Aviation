@@ -1,0 +1,99 @@
+body{
+  background-image: url('../assest/BackgroundImage.jpg');
+}
+
+/* Table Container */
+.table-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    overflow-x: auto;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: white;
+    border-radius: 8px;
+}
+
+/* Headers */
+th {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: larger;
+}
+
+tr > td:first-child{
+    font-weight: bold;
+    font-size: medium;
+}
+
+
+/* Category Headers */
+.category-header {
+    background-color: #3f7cff;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    font-size: larger;
+}
+
+/* Cells */
+td {
+    padding: 1rem;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+/* Alternating Rows */
+tr:nth-child(even):not(.category-header) {
+    background-color: #f8fafc;
+}
+
+
+
+/* Section Headers */
+.section-header {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    margin: 2rem 0;
+    border-radius: 4px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    table {
+        display: block;
+    }
+    
+    th, td {
+        min-width: 200px;
+    }
+    
+    .table-container {
+        padding: 0 0.5rem;
+    }
+}
+
+/* Scrollbar */
+.table-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+

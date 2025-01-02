@@ -22,6 +22,7 @@ export function createItemComponent(Links, title) {
 
         // Conditionally add the download attribute if isDownload is true
         if (link.isDownload) {
+          
             anchorElement.setAttribute('download', link.name);
         }
 
