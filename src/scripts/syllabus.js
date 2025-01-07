@@ -23,10 +23,6 @@ let data = [
     name: "Diploma In Aviation Security",
     link: "../src/assest/syllabus/Diploma_in_Aviation_Security_...._Syllabus.doc",
   },
-  {
-    name: "Certificate in Airport Warehouse Coordinator",
-    link: "../src/assest/syllabus/Certificate_in_Airport_warehouse_coordinaotr.docx",
-  },
 ];
 
 const list = document.getElementById("syllabus");

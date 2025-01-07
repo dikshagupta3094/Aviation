@@ -1,10 +1,10 @@
+<?php include 'header.php' ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About SATHM</title>
-    <link rel="stylesheet" href="../src/style/output.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
       rel="stylesheet"
@@ -17,137 +17,10 @@
       referrerpolicy="no-referrer"
     />
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <link rel="stylesheet" href="../src/style/output.css" />
     <link rel="stylesheet" href="../src/style/aboutcss.css" />
   </head>
   <body>
-    <!-- Header Placeholder -->
-    <div id="header-container"></div>
-    <nav
-      id="NavBar"
-      class="md:border-b md:border-gray-400 sticky top-0 z-50 md:py-2 md:bg-blue-950"
-    >
-      <ul
-        class="hidden md:flex md:justify-around md:items-center text-white text-[18px] font-bold gap-2 p-2"
-      >
-        <li>
-          <a href="./index.html" class="hover:text-blue-700 hover:underline"
-            >Home</a
-          >
-        </li>
-        <li>
-          <a href="./about.html" class="hover:text-blue-700 hover:underline"
-            >About</a
-          >
-        </li>
-        <div
-          class="hover:text-blue-700 cursor-pointer flex items-center justify-center gap-1 relative hover:underline"
-          id="academics"
-        >
-          <ul>
-            Academics
-          </ul>
-          <i class="fa-solid fa-caret-down"></i>
-        </div>
-        <li>
-          <a href="./faculties.html" class="hover:text-blue-700 hover:underline"
-            >Faculties</a
-          >
-        </li>
-        <li>
-          <a href="./events.html" class="hover:text-blue-700 hover:underline"
-            >Events & Activities</a
-          >
-        </li>
-        <li>
-          <a href="./corporate.html" class="hover:text-blue-700 hover:underline"
-            >Corporate Linkages</a
-          >
-        </li>
-        <li>
-          <a href="./mous.html" class="hover:text-blue-700 hover:underline"
-            >MOUs</a
-          >
-        </li>
-      </ul>
-    </nav>
-
-    <!-- Drawer (Hidden for desktop) -->
-    <div class="md:hidden">
-      <button id="menu-btn" class="text-2xl p-2 fixed top-0">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-      <div
-        id="drawer"
-        class="hidden fixed left-0 top-0 w-64 bg-white shadow-md h-full"
-      >
-        <button id="close-btn" class="p-4 text-2xl">
-          <i class="fas fa-times"></i>
-        </button>
-        <ul class="p-4 space-y-6 bg-[#f7f7f7]">
-          <li>
-            <a href="./index.html" class="flex items-center"
-              ><i class="fas fa-home mr-3"></i>Home</a
-            >
-          </li>
-          <li>
-            <a href="./about.html" class="flex items-center"
-              ><i class="fas fa-plane mr-3"></i>About</a
-            >
-          </li>
-          <li class="relative">
-            <div
-              id="academicsDropdown"
-              class="flex items-center cursor-pointer"
-            >
-              <i class="fas fa-book mr-3"></i>
-              <span>Academics</span>
-              <i class="fa-solid fa-caret-down ml-2"></i>
-            </div>
-            <!-- Dropdown Content -->
-            <div id="academicsMenu" class="hidden mt-2">
-              <ul class="flex flex-col w-full">
-                <li
-                  class="p-2 text-center border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white"
-                >
-                  <a href="./PG.html">PG Course</a>
-                </li>
-                <li
-                  class="p-2 text-center border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white"
-                >
-                  <a href="./UG.html">UG Course</a>
-                </li>
-                <li
-                  class="p-2 text-center border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white"
-                >
-                  <a href="./Diploma.html">Diploma Course</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-
-          <li>
-            <a href="./faculties.html" class="flex items-center"
-              ><i class="fas fa-users mr-3"></i>Faculties</a
-            >
-          </li>
-          <li>
-            <a href="./events.html" class="flex items-center"
-              ><i class="fas fa-calendar-alt mr-3"></i>Events & Activities</a
-            >
-          </li>
-          <li>
-            <a href="./corporate.html" class="flex items-center"
-              ><i class="fas fa-industry mr-3"></i>Corporate Linkages</a
-            >
-          </li>
-          <li>
-            <a href="./mous.html" class="flex items-center"
-              ><i class="fas fa-handshake mr-3"></i>MOUs</a
-            >
-          </li>
-        </ul>
-      </div>
-    </div>
 
     <!-- Sidebar -->
     <div class="container">
@@ -171,7 +44,7 @@
               alt="Director"
               class="director-img"
             />
-            <blockquote className=" mt-4 text-gray-700">
+            <blockquote className=" mt-4 text-black">
               I welcome you on behalf of School Of Tourism, Aviation And
               Hospitality Management(SATHM), DAVV, which is a premiere
               department of central India recently opened on 22July’24. The
@@ -322,95 +195,11 @@
       </main>
     </div>
 
-    <!-- Footer Placeholder -->
-    <div id="footer-container"></div>
-
     <!-- Script section begins here -->
 
-    <!-- Script for header module -->
-    <script type="module">
-      import { createHeaderComponent } from "../src/scripts/Header.js";
-      const headerContainer = document.getElementById("header-container");
-      headerContainer.appendChild(createHeaderComponent());
-      //Navbar Dropdown Script
-      const academic = document.getElementById("academics");
-      academic.addEventListener("click", () => {
-        const dropdown = `<div class = 'absolute left-0 top-9 mt-2 w-max space-x-20 space-y-20 flex flex-col items-center justify-center text-black'>
-   <ul class = 'flex flex-col'>
-   <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'> <a href = ${"./PG.html"}>PG Course</a></li>
-   <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./UG.html"}>UG Course</a></li>
-   <li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./Diploma.html"}>Diploma Course</a></li>
   
-   </ul>
- </div>`;
-
-        const existingDropdown = academic.querySelector(".dropdown");
-        if (existingDropdown) {
-          existingDropdown.remove(); // Remove if it exists
-        } else {
-          const menu = document.createElement("div");
-          menu.classList.add("dropdown"); // Add a class to identify it
-          menu.innerHTML = dropdown;
-          academic.appendChild(menu);
-        }
-      });
-    </script>
-
-    <!-- Javascript to handle drawer -->
-    <script>
-      const menuBtn = document.getElementById("menu-btn");
-      const drawer = document.getElementById("drawer");
-      const closeBtn = document.getElementById("close-btn");
-
-      menuBtn.addEventListener("click", () => {
-        drawer.classList.toggle("hidden");
-      });
-
-      closeBtn.addEventListener("click", () => {
-        drawer.classList.add("hidden");
-      });
-
-      //Script for handling academics dropdown menu
-
-      const academicsDropdown = document.getElementById("academicsDropdown");
-      const academicsMenu = document.getElementById("academicsMenu");
-
-      // Toggle Academics Dropdown
-      academicsDropdown.addEventListener("click", () => {
-        if (academicsMenu.classList.contains("hidden")) {
-          academicsMenu.classList.remove("hidden"); // Show dropdown
-          academicsMenu.classList.add("block");
-        } else {
-          academicsMenu.classList.remove("block"); // Hide dropdown
-          academicsMenu.classList.add("hidden");
-        }
-      });
-    </script>
-
-    <!--Script to show content on click  -->
-    <script>
-      function showContent(sectionId) {
-        // Hide all content sections
-        const sections = document.querySelectorAll(".content-section");
-        sections.forEach((section) => section.classList.remove("active"));
-
-        // Remove active class from all sidebar items
-        const sidebarItems = document.querySelectorAll(".sidebar ul li");
-        sidebarItems.forEach((item) => item.classList.remove("active"));
-
-        // Show the selected content section
-        document.getElementById(sectionId).classList.add("active");
-
-        // Add active class to the selected sidebar item
-        event.target.classList.add("active");
-      }
-    </script>
-
+    <script src="../src/scripts/about.js"></script>
     <!-- Script for footer module -->
-    <script type="module">
-      import { createFooterComponent } from "../src/scripts/Footer.js";
-      const footerContainer = document.getElementById("footer-container");
-      footerContainer.appendChild(createFooterComponent());
-    </script>
+    <?php include 'footer.php' ?>
   </body>
 </html>

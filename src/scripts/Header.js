@@ -1,29 +1,50 @@
-export function createHeaderComponent() {
-  const headerHTML = `
-    <div class="flex flex-col items-center justify-center p-3 bg-cover" style="background-image: url('../src/assest/Logo/image_bg2.jpg')">
-        <div class="flex flex-col md:flex-row items-center justify-between w-full space-y-4 md:space-y-0 md:space-x-4 lg:space-x-8">
-            <img src="../src/assest/Logo/Devi_Ahilya_Vishwavidyalaya_Logo.png" class="md:w-36 md:h-36 hidden md:block" alt="Devi Ahilya Logo" />
-            <img src="../src/assest/Logo/sathm_logo_without_background.png" class="block md:hidden w-40 h-40" alt="Small Device Logo" />
-            <div class="text-center md:px-2 lg:px-2">
-                <h1 class="md:text-3xl lg:text-4xl text-lg font-bold text-blue-900 sm:px-0 py-0">
-                    SCHOOL OF AVIATION, TOURISM AND HOSPITALITY MANAGEMENT
-                </h1>
-                <span class="text-lg md:text-xl lg:text-2xl text-blue-900 font-bold">[SATHM]</span>
-                <p class="text-lg md:text-2xl lg:text-3xl text-blue-900 mt-2 tracking-wider font-bold text-center">
-                    DEVI AHILYA VISHWAVIDYALAYA, INDORE
-                </p>
-                <p class="text-xl text-blue-900 mt-1 tracking-wider font-semibold text-center">
-                    Accredited A+ Grade by NAAC
-                </p>
-            </div>
-            <img src="../src/assest/Logo/sathm_logo_without_background.png" alt="SATHM Logo" class="md:w-40 md:h-40 hidden md:block" />
-        </div>
-    </div>`;
-  const headerContainer = document.createElement("div");
-  headerContainer.innerHTML = headerHTML;
 
-  
+// Script to handle academic dropdown
+const academic = document.getElementById("academics");
+academic.addEventListener("click", () => {
+  const dropdown = `<div class = 'absolute left-0 top-9 mt-2 w-max space-x-20 space-y-20 flex flex-col items-center justify-center text-black'>
+<ul class = 'flex flex-col'>
+<li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'> <a href = ${"./PG.php"}>PG Course</a></li>
+<li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./UG.php"}>UG Course</a></li>
+<li class = 'p-2 text-center border-gray-300 border bg-[#e0e7ff] hover:underline hover:bg-blue-800 hover:text-white'><a href = ${"./Diploma.php"}>Diploma Course</a></li>
+</ul>
+</div>`;
 
-  // Return the header element
-  return headerContainer;
-}
+  const existingDropdown = academic.querySelector(".dropdown");
+  if (existingDropdown) {
+    existingDropdown.remove(); // Remove if it exists
+  } else {
+    const menu = document.createElement("div");
+    menu.classList.add("dropdown"); // Add a class to identify it
+    menu.innerHTML = dropdown;
+    academic.appendChild(menu);
+  }
+});
+
+// Script to handle drawer toogle
+const menuBtn = document.getElementById("menu-btn");
+const drawer = document.getElementById("drawer");
+const closeBtn = document.getElementById("close-btn");
+
+menuBtn.addEventListener("click", () => {
+  drawer.classList.toggle("hidden");
+});
+
+closeBtn.addEventListener("click", () => {
+  drawer.classList.add("hidden");
+});
+
+//Script for handling academics dropdown menu
+const academicsDropdown = document.getElementById("academicsDropdown");
+const academicsMenu = document.getElementById("academicsMenu");
+
+// Toggle Academics Dropdown
+academicsDropdown.addEventListener("click", () => {
+  if (academicsMenu.classList.contains("hidden")) {
+    academicsMenu.classList.remove("hidden"); // Show dropdown
+    academicsMenu.classList.add("block");
+  } else {
+    academicsMenu.classList.remove("block"); // Hide dropdown
+    academicsMenu.classList.add("hidden");
+  }
+});

@@ -1,4 +1,4 @@
-// // NoticeBoard.js
+// // // NoticeBoard.js
 // const notices = [
 //   {
 //     id: 1,
