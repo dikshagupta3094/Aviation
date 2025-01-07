@@ -34,16 +34,16 @@
   <!-- Main Noticeboard Container -->
   <div>
     <div class="NoticeBoardflex-container">
-      <div class="NoticeBoardcontainer">
+    <div class="NoticeBoardcontainer">
         <!-- Large Notice Board -->
-        <div class="large-notice-board" id="largeNoticeBoard">
+        <div class="large-notice-board" id="largeNoticeBoard" style="background-image: url('../src/assest/ticket.jpg');">
           <div
             class="large-notice-content"
             onmouseover="stopMarquee()"
             onmouseout="startMarquee()">
             <marquee
               direction="up"
-              scrollamount="4"
+              scrollamount="8"
               id="noticeMarquee"></marquee>
           </div>
         </div>
@@ -57,12 +57,12 @@
             onmouseout="startMarquee()">
             <marquee
               direction="up"
-              scrollamount="4"
+              scrollamount="8"
               id="noticeMarqueeSmall"></marquee>
           </div>
         </div>
       </div>
-    </div>
+    </div> 
 
     <!-- Carousel Wrapper -->
     <div

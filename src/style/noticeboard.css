@@ -14,10 +14,6 @@
       padding-right: 1.25rem; /* pr-5 */
     
     }
-  /* Background Image*/
-/* .background-image{
-     background-image: url('/src/assest/BackgroundImage.jpg');   
-} */
 
 /* Flex container div */
 .NoticeBoardflex-container {
@@ -30,7 +26,6 @@
     /* Large Notice Board Styles */
     .large-notice-board {
       display: flex;
-      background-image: url('/src/assest/ticket.jpg');
       background-size: 100%;
       background-position: center;
       background-repeat: no-repeat;

@@ -24,8 +24,8 @@
     <!-- Events section begins here -->
 
     <section class="flex justify-center gap-5 md:h-[600px] ">
-      <div class="overflow-x-auto overflow-y-auto shadow-xl">
-        <table class="border border-gray-300 m-10 bg-white">
+      <div class="overflow-x-auto overflow-y-auto">
+        <table class="border border-gray-300 m-10 bg-white w-[100vw]">
           <thead class="text-white border border-black text-xl bg-blue-950">
             <th class="border border-white text-center p-3">S.No.</th>
             <th class="border border-white text-center p-3">Date</th>
