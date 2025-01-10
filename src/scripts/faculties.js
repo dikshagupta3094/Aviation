@@ -1,7 +1,5 @@
 
 document.addEventListener('DOMContentLoaded',function(){
-    console.log("Hello");
-    
     let data = [ 
       {
         id:1,
@@ -112,59 +110,13 @@ document.addEventListener('DOMContentLoaded',function(){
   
     getData();
     
-    // function showPopup(cardData) {
-    //   // Create popup HTML
-    //   const popupHTML = `
-    //   <div class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
-    //       <div class="bg-white rounded-lg w-[90%] max-w-md md:max-w-2xl p-6 shadow-2xl relative">
-    //         <button
-    //           class="absolute top-4 right-4 text-gray-600 hover:text-red-600 transition-colors duration-300"
-    //           onclick="closePopup()
-    //         >
-    //           <i class="fa-solid fa-xmark text-2xl"></i>
-    //         </button>
-    //         <div class="flex flex-col md:flex-row items-center gap-6">
-    //           <img src="${cardData.image}" class="h-40 w-40 rounded-full shadow-lg" alt="Popup Image" />
-    //           <div class="text-center md:text-left">
-    //             <h2 class="text-2xl font-bold text-gray-800">${cardData.name}</h2>
-    //             <p class="text-lg text-gray-600 mt-2">${cardData.designation}</p>
-    //           </div>
-    //         </div>
-    //         <div class="mt-6 text-lg text-gray-700">
-    //           <p><span class="font-bold">Qualification:</span> ${cardData.qualification}</p>
-    //           <p class="mt-2"><span class="font-bold">Specialization:</span> ${cardData.specialization}</p>
-    //           <p class="mt-2"><span class="font-bold">Teaching Experience:</span> ${cardData.Teaching_Experience}</p>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   `;
-    
-    //   // Add popup to the body
-    //   const popupContainer = document.createElement("div");
-    //   popupContainer.id = "popup-container";
-    //   popupContainer.innerHTML = popupHTML;
-    //   document.body.appendChild(popupContainer);
-    // }
-    
-    // // Close popup
-    // function closePopup() {
-    //   const popup = document.getElementById("popup-container");
-    //   if (popup) popup.remove();
-    // }
-    
-
-
-
-
-
     function showPopup(cardData) {
       // Create popup HTML
       const popupHTML = `
-      <div class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
+      <div class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50" id = "popup-container">
           <div class="bg-white rounded-lg w-[90%] max-w-md md:max-w-2xl p-6 shadow-2xl relative">
             <button
-              class="absolute top-4 right-4 text-gray-600 hover:text-red-600 transition-colors duration-300"
-              onclick="closePopup()"
+              class="absolute top-4 right-4 text-gray-600 hover:text-red-600 transition-colors duration-300" id = "close-popup" 
             >
               <i class="fa-solid fa-xmark text-2xl"></i>
             </button>
@@ -183,17 +135,23 @@ document.addEventListener('DOMContentLoaded',function(){
           </div>
         </div>
       `;
+    
       // Add popup to the body
       const popupContainer = document.createElement("div");
       popupContainer.id = "popup-container";
       popupContainer.innerHTML = popupHTML;
       document.body.appendChild(popupContainer);
-    }
-    // Close popup
-    function closePopup() {
+       
+
+      const popup = document.getElementById('close-popup');
+       popup.addEventListener('click',()=>{
+        console.log("POPUP");
+        
       const popup = document.getElementById("popup-container");
       if (popup) popup.remove();
+    })
     }
     
+     
   })
   
