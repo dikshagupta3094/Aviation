@@ -3,6 +3,7 @@ module.exports = {
   content: [
     // "./public/index.html",// Main HTML file
     "./public/**/*.html",
+    "./public/**/*.php",
     // "./public/*.html", //All html file in Public 
     "./public/*.js",  // All js file in public    
     "./src/components/*.js",  // All js file in component   

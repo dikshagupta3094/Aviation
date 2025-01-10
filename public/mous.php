@@ -22,7 +22,7 @@
 
   <div class="m-5 p-5 text-xl border border-gray-500 rounded-lg">
     <div class="relative overflow-hidden border shadow-md rounded-lg mb-6 ">
-      <div class="p-4">
+      <div class="p-4 ">
         <h1 class="text-2xl font-bold text-center text-blue-950 mb-4">MoU Partners</h1>
         <div id="marquee" class="absolute flex gap-8 text-lg text-gray-700 mt-6 font-semibold" style="top: 50%; transform: translateY(-50%);">
           <span class="flex items-center flex-shrink-0">
